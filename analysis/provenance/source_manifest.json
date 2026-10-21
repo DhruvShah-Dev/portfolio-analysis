@@ -1,0 +1,19 @@
+{
+  "downloaded_at_utc": "2026-10-21T01:34:30.909192+00:00",
+  "sources": {
+    "industries": {
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/10_Industry_Portfolios_CSV.zip",
+      "sha256": "ebd937a4b995d821867aeb956a96f09a666386f38fa82516b7d1767ee4a49ae5"
+    },
+    "factors": {
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_5_Factors_2x3_CSV.zip",
+      "sha256": "36756c5c2559648519ac4b22913d860c6afd865cfebce920e3e8927f8e2d10b7"
+    }
+  },
+  "coverage": {
+    "first_month": "196307",
+    "last_month": "202608",
+    "months": 758,
+    "industry_rows": 7580
+  }
+}

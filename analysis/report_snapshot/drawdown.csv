@@ -1,0 +1,641 @@
+month,series,drawdown
+2000-01,"Equal industry, net",-0.0260549199999999
+2000-01,Broad market,-0.0433
+2000-02,"Equal industry, net",-0.0562725632109779
+2000-02,Broad market,-0.01574704
+2000-03,"Equal industry, net",0.0
+2000-03,Broad market,0.0
+2000-04,"Equal industry, net",-0.0078812513563341
+2000-04,Broad market,-0.0588999999999999
+2000-05,"Equal industry, net",-0.0180121529968562
+2000-05,Broad market,-0.0955087899999999
+2000-06,"Equal industry, net",-0.0137072777008014
+2000-06,Broad market,-0.049560636532
+2000-07,"Equal industry, net",-0.0232498918544102
+2000-07,Broad market,-0.06856942380136
+2000-08,"Equal industry, net",0.0
+2000-08,Broad market,0.0
+2000-09,"Equal industry, net",-0.0054145089626203
+2000-09,Broad market,-0.0493
+2000-10,"Equal industry, net",-0.005140095091709
+2000-10,Broad market,-0.0704055399999999
+2000-11,"Equal industry, net",-0.0619555028179675
+2000-11,Broad market,-0.1651312154739999
+2000-12,"Equal industry, net",-0.0340433386971397
+2000-12,Broad market,-0.1511054198939631
+2001-01,"Equal industry, net",-0.0085441295993735
+2001-01,Broad market,-0.1189323153079442
+2001-02,"Equal industry, net",-0.0534724109543082
+2001-02,Broad market,-0.2039553468807274
+2001-03,"Equal industry, net",-0.0999620892839748
+2001-03,Broad market,-0.2583251966887738
+2001-04,"Equal industry, net",-0.0364946215549697
+2001-04,Broad market,-0.1965436855729487
+2001-05,"Equal industry, net",-0.0290565872228214
+2001-05,Broad market,-0.1885091224286782
+2001-06,"Equal industry, net",-0.0513191546180639
+2001-06,Broad market,-0.201979870996362
+2001-07,"Equal industry, net",-0.0576904301348382
+2001-07,Broad market,-0.2165836393571285
+2001-08,"Equal industry, net",-0.1045474212434974
+2001-08,Broad market,-0.2642936957202794
+2001-09,"Equal industry, net",-0.1812570597132634
+2001-09,Broad market,-0.3302129805837424
+2001-10,"Equal industry, net",-0.1639685785513593
+2001-10,Broad market,-0.3121287310595034
+2001-11,"Equal industry, net",-0.1103441942226813
+2001-11,Broad market,-0.2591626433510853
+2001-12,"Equal industry, net",-0.0918185210197276
+2001-12,Broad market,-0.2461239058740643
+2002-01,"Equal industry, net",-0.1017820219844106
+2002-01,Broad market,-0.2559242950977014
+2002-02,"Equal industry, net",-0.1015179303881875
+2002-02,Broad market,-0.2719219227531008
+2002-03,"Equal industry, net",-0.0581268752423205
+2002-03,Broad market,-0.2401049107774112
+2002-04,"Equal industry, net",-0.0948910034253061
+2002-04,Broad market,-0.2785556022920742
+2002-05,"Equal industry, net",-0.1057192792156981
+2002-05,Broad market,-0.2873572239441109
+2002-06,"Equal industry, net",-0.1676909884849599
+2002-06,Broad market,-0.337954861044079
+2002-07,"Equal industry, net",-0.2451391837699195
+2002-07,Broad market,-0.391183290216135
+2002-08,"Equal industry, net",-0.2387672143433948
+2002-08,Broad market,-0.3872868632735182
+2002-09,"Equal industry, net",-0.3134360499005421
+2002-09,Broad market,-0.4497836032196194
+2002-10,"Equal industry, net",-0.2669372568636593
+2002-10,Broad market,-0.4058763347565449
+2002-11,"Equal industry, net",-0.2232064736521752
+2002-11,Broad market,-0.369753615909743
+2002-12,"Equal industry, net",-0.2575488831399213
+2002-12,Broad market,-0.4053625366108424
+2003-01,"Equal industry, net",-0.2801994213751215
+2003-01,Broad market,-0.4200500819565546
+2003-02,"Equal industry, net",-0.2968559484572725
+2003-02,Broad market,-0.4304311854895323
+2003-03,"Equal industry, net",-0.2898449667692878
+2003-03,Broad market,-0.4236533165968577
+2003-04,"Equal industry, net",-0.2346038486509047
+2003-04,Broad market,-0.3759318112110774
+2003-05,"Equal industry, net",-0.1851469880500001
+2003-05,Broad market,-0.3376140244194376
+2003-06,"Equal industry, net",-0.1723973645343176
+2003-06,Broad market,-0.3275457575906131
+2003-07,"Equal industry, net",-0.1615076372883134
+2003-07,Broad market,-0.3114068557727878
+2003-08,"Equal industry, net",-0.1343956368645387
+2003-08,Broad market,-0.2948806203113346
+2003-09,"Equal industry, net",-0.1479063745256095
+2003-09,Broad market,-0.3030600051157233
+2003-10,"Equal industry, net",-0.0996664738017433
+2003-10,Broad market,-0.2601981954303402
+2003-11,"Equal industry, net",-0.0860938602204941
+2003-11,Broad market,-0.2496930098054509
+2003-12,"Equal industry, net",-0.0321461284850411
+2003-12,Broad market,-0.216904594333949
+2004-01,"Equal industry, net",-0.0192649334800694
+2004-01,Broad market,-0.1995198763281628
+2004-02,"Equal industry, net",-0.0009691812951067
+2004-02,Broad market,-0.1878328665225539
+2004-03,"Equal industry, net",-0.0103793222743053
+2004-03,Broad market,-0.1978225222643265
+2004-04,"Equal industry, net",-0.0157748810399631
+2004-04,Broad market,-0.2117804103769272
+2004-05,"Equal industry, net",-0.0124537451000609
+2004-05,Broad market,-0.2020064874656011
+2004-06,"Equal industry, net",0.0
+2004-06,Broad market,-0.1865254133224337
+2004-07,"Equal industry, net",-0.0321172502082782
+2004-07,Broad market,-0.2185763120375298
+2004-08,"Equal industry, net",-0.0310126193748959
+2004-08,Broad market,-0.2170916070304011
+2004-09,"Equal industry, net",-0.0121269919588785
+2004-09,Broad market,-0.203703873510621
+2004-10,"Equal industry, net",0.0
+2004-10,Broad market,-0.1915205427753333
+2004-11,"Equal industry, net",0.0
+2004-11,Broad market,-0.153683704177219
+2004-12,"Equal industry, net",0.0
+2004-12,Broad market,-0.1234702124163457
+2005-01,"Equal industry, net",-0.0216141895367699
+2005-01,Broad market,-0.1461723339147623
+2005-02,"Equal industry, net",0.0
+2005-02,Broad market,-0.1287542495266235
+2005-03,"Equal industry, net",-0.018303741513608
+2005-03,Broad market,-0.1437396764347656
+2005-04,"Equal industry, net",-0.0473794794679326
+2005-04,Broad market,-0.1642042981679746
+2005-05,"Equal industry, net",-0.0105749453712628
+2005-05,Broad market,-0.1316918453667089
+2005-06,"Equal industry, net",0.0
+2005-06,Broad market,-0.1246585493141793
+2005-07,"Equal industry, net",0.0
+2005-07,Broad market,-0.0882443449656491
+2005-08,"Equal industry, net",-0.0062634682845648
+2005-08,Broad market,-0.0964501458609582
+2005-09,"Equal industry, net",-0.001115287638755
+2005-09,Broad market,-0.0894928119840875
+2005-10,"Equal industry, net",-0.0325029252019045
+2005-10,Broad market,-0.1056087892119693
+2005-11,"Equal industry, net",-0.0046365392309118
+2005-11,Broad market,-0.0705486537490786
+2005-12,"Equal industry, net",-0.0038976417587109
+2005-12,Broad market,-0.0698050926720779
+2006-01,"Equal industry, net",0.0
+2006-01,Broad market,-0.0383645048043941
+2006-02,"Equal industry, net",-0.0003919618229598
+2006-02,Broad market,-0.0379798506063159
+2006-03,"Equal industry, net",0.0
+2006-03,Broad market,-0.0202786798574722
+2006-04,"Equal industry, net",0.0
+2006-04,Broad market,-0.0095997174679187
+2006-05,"Equal industry, net",-0.0176868031793943
+2006-05,Broad market,-0.0405992463111728
+2006-06,"Equal industry, net",-0.0096820077863428
+2006-06,Broad market,-0.0400236058589595
+2006-07,"Equal industry, net",-0.0053675423494635
+2006-07,Broad market,-0.0435755185172814
+2006-08,"Equal industry, net",0.0
+2006-08,Broad market,-0.0201431187209548
+2006-09,"Equal industry, net",0.0
+2006-09,Broad market,0.0
+2006-10,"Equal industry, net",0.0
+2006-10,Broad market,0.0
+2006-11,"Equal industry, net",0.0
+2006-11,Broad market,0.0
+2006-12,"Equal industry, net",0.0
+2006-12,Broad market,0.0
+2007-01,"Equal industry, net",0.0
+2007-01,Broad market,0.0
+2007-02,"Equal industry, net",-0.0101019059471991
+2007-02,Broad market,-0.0157999999999999
+2007-03,"Equal industry, net",0.0
+2007-03,Broad market,-0.0045801200000001
+2007-04,"Equal industry, net",0.0
+2007-04,Broad market,0.0
+2007-05,"Equal industry, net",0.0
+2007-05,Broad market,0.0
+2007-06,"Equal industry, net",-0.0132158449786896
+2007-06,Broad market,-0.0156
+2007-07,"Equal industry, net",-0.0463973736780453
+2007-07,Broad market,-0.04828208
+2007-08,"Equal industry, net",-0.037030174393228
+2007-08,Broad market,-0.0353387162879998
+2007-09,"Equal industry, net",-0.004098172100717
+2007-09,Broad market,-0.0011897068445949
+2007-10,"Equal industry, net",0.0
+2007-10,Broad market,0.0
+2007-11,"Equal industry, net",-0.0392987611804718
+2007-11,Broad market,-0.0445999999999999
+2007-12,"Equal industry, net",-0.0417080332666851
+2007-12,Broad market,-0.0503323999999999
+2008-01,"Equal industry, net",-0.1002909963813755
+2008-01,Broad market,-0.1083570903599999
+2008-02,"Equal industry, net",-0.1204599224280532
+2008-02,Broad market,-0.1347497204853439
+2008-03,"Equal industry, net",-0.1261432118695559
+2008-03,Broad market,-0.1414121476376066
+2008-04,"Equal industry, net",-0.0846762798810021
+2008-04,Broad market,-0.100285789509448
+2008-05,"Equal industry, net",-0.0602213711525713
+2008-05,Broad market,-0.0818416481943916
+2008-06,"Equal industry, net",-0.134685713383633
+2008-06,Broad market,-0.1576815280535347
+2008-07,"Equal industry, net",-0.1457884944798878
+2008-07,Broad market,-0.1627354388852135
+2008-08,"Equal industry, net",-0.1299987608206252
+2008-08,Broad market,-0.1488368471707081
+2008-09,"Equal industry, net",-0.2105009353300106
+2008-09,Broad market,-0.2271438572310029
+2008-10,"Equal industry, net",-0.3488919180767501
+2008-10,Broad market,-0.3594568288730553
+2008-11,"Equal industry, net",-0.3887596274109011
+2008-11,Broad market,-0.4088427073669427
+2008-12,"Equal industry, net",-0.3789816892872873
+2008-12,Broad market,-0.3983792232873375
+2009-01,"Equal industry, net",-0.4239060422015793
+2009-01,Broad market,-0.4470503441233919
+2009-02,"Equal industry, net",-0.480876814455814
+2009-02,Broad market,-0.5030641442636923
+2009-03,"Equal industry, net",-0.4378520807653654
+2009-03,Broad market,-0.4581908364907038
+2009-04,"Equal industry, net",-0.3705562550483148
+2009-04,Broad market,-0.4030346636454575
+2009-05,"Equal industry, net",-0.3447289760959726
+2009-05,Broad market,-0.3719924661550212
+2009-06,"Equal industry, net",-0.3377516785597104
+2009-06,Broad market,-0.3692920337594878
+2009-07,"Equal industry, net",-0.2826187892799898
+2009-07,Broad market,-0.3204121663758482
+2009-08,"Equal industry, net",-0.2655084415899925
+2009-08,Broad market,-0.2977139327328014
+2009-09,"Equal industry, net",-0.236411516175753
+2009-09,Broad market,-0.268990432581573
+2009-10,"Equal industry, net",-0.2506941926561586
+2009-10,Broad market,-0.287631176550743
+2009-11,"Equal industry, net",-0.2054958725703298
+2009-11,Broad market,-0.2478809962022744
+2009-12,"Equal industry, net",-0.1783294537601579
+2009-12,Broad market,-0.2271977235978368
+2010-01,"Equal industry, net",-0.2049344511268388
+2010-01,Broad market,-0.2530865998573094
+2010-02,"Equal industry, net",-0.1785092655660294
+2010-02,Broad market,-0.2277662355924721
+2010-03,"Equal industry, net",-0.1289961896156246
+2010-03,Broad market,-0.1790382850583571
+2010-04,"Equal industry, net",-0.1079406848853944
+2010-04,Broad market,-0.1625369545880302
+2010-05,"Equal industry, net",-0.1754034536274494
+2010-05,Broad market,-0.2286127888710345
+2010-06,"Equal industry, net",-0.2188054776128751
+2010-06,Broad market,-0.2715019178098049
+2010-07,"Equal industry, net",-0.1583405570342106
+2010-07,Broad market,-0.2210170007140244
+2010-08,"Equal industry, net",-0.1926049921130698
+2010-08,Broad market,-0.2580965914800367
+2010-09,"Equal industry, net",-0.1180812021433311
+2010-09,Broad market,-0.1871706256255283
+2010-10,"Equal industry, net",-0.0811473244368226
+2010-10,Broad market,-0.1556328458997989
+2010-11,"Equal industry, net",-0.0705130236902803
+2010-11,Broad market,-0.1505666429751977
+2010-12,"Equal industry, net",-0.0116663903471584
+2010-12,Broad market,-0.0925503446904036
+2011-01,"Equal industry, net",0.0
+2011-01,Broad market,-0.0744920965497427
+2011-02,"Equal industry, net",0.0
+2011-02,Broad market,-0.0421918707193288
+2011-03,"Equal industry, net",0.0
+2011-03,Broad market,-0.0376901725117098
+2011-04,"Equal industry, net",0.0
+2011-04,Broad market,-0.0097831875145496
+2011-05,"Equal industry, net",-0.0076710127783536
+2011-05,Broad market,-0.0223589410331148
+2011-06,"Equal industry, net",-0.0216941289284647
+2011-06,Broad market,-0.0393698954591386
+2011-07,"Equal industry, net",-0.0486622330626009
+2011-07,Broad market,-0.0619447029158487
+2011-08,"Equal industry, net",-0.1007613036900026
+2011-08,Broad market,-0.1177589930923558
+2011-09,"Equal industry, net",-0.1664606776200105
+2011-09,Broad market,-0.1845446373152646
+2011-10,"Equal industry, net",-0.0708500871941668
+2011-10,Broad market,-0.0920719991868156
+2011-11,"Equal industry, net",-0.0746488316080631
+2011-11,Broad market,-0.0945234047890112
+2011-12,"Equal industry, net",-0.0652688223198126
+2011-12,Broad market,-0.0877323303249286
+2012-01,"Equal industry, net",-0.0235107275739113
+2012-01,Broad market,-0.0416628130063375
+2012-02,"Equal industry, net",0.0
+2012-02,Broad market,0.0
+2012-03,"Equal industry, net",0.0
+2012-03,Broad market,0.0
+2012-04,"Equal industry, net",-0.0076688558799419
+2012-04,Broad market,-0.0083999999999999
+2012-05,"Equal industry, net",-0.0595958743776823
+2012-05,Broad market,-0.0694825599999999
+2012-06,"Equal industry, net",-0.0292903244896219
+2012-06,Broad market,-0.03319237984
+2012-07,"Equal industry, net",-0.0157524975478258
+2012-07,Broad market,-0.025554599640736
+2012-08,"Equal industry, net",0.0
+2012-08,Broad market,-0.0007062419315746
+2012-09,"Equal industry, net",0.0
+2012-09,Broad market,0.0
+2012-10,"Equal industry, net",-0.0075422555753262
+2012-10,Broad market,-0.0174999999999999
+2012-11,"Equal industry, net",-0.0002494840687446
+2012-11,Broad market,-0.0097382499999999
+2012-12,"Equal industry, net",0.0
+2012-12,Broad market,0.0
+2013-01,"Equal industry, net",0.0
+2013-01,Broad market,0.0
+2013-02,"Equal industry, net",0.0
+2013-02,Broad market,0.0
+2013-03,"Equal industry, net",0.0
+2013-03,Broad market,0.0
+2013-04,"Equal industry, net",0.0
+2013-04,Broad market,0.0
+2013-05,"Equal industry, net",0.0
+2013-05,Broad market,0.0
+2013-06,"Equal industry, net",-0.0075239888684907
+2013-06,Broad market,-0.0120000000000001
+2013-07,"Equal industry, net",0.0
+2013-07,Broad market,0.0
+2013-08,"Equal industry, net",-0.0282021037076715
+2013-08,Broad market,-0.0271
+2013-09,"Equal industry, net",0.0
+2013-09,Broad market,0.0
+2013-10,"Equal industry, net",0.0
+2013-10,Broad market,0.0
+2013-11,"Equal industry, net",0.0
+2013-11,Broad market,0.0
+2013-12,"Equal industry, net",0.0
+2013-12,Broad market,0.0
+2014-01,"Equal industry, net",-0.0322605172541472
+2014-01,Broad market,-0.033
+2014-02,"Equal industry, net",0.0
+2014-02,Broad market,0.0
+2014-03,"Equal industry, net",0.0
+2014-03,Broad market,0.0
+2014-04,"Equal industry, net",0.0
+2014-04,Broad market,-0.0019
+2014-05,"Equal industry, net",0.0
+2014-05,Broad market,0.0
+2014-06,"Equal industry, net",0.0
+2014-06,Broad market,0.0
+2014-07,"Equal industry, net",-0.026831251073785
+2014-07,Broad market,-0.0202999999999999
+2014-08,"Equal industry, net",0.0
+2014-08,Broad market,0.0
+2014-09,"Equal industry, net",-0.028681063425589
+2014-09,Broad market,-0.0195999999999999
+2014-10,"Equal industry, net",-0.0034222333736793
+2014-10,Broad market,0.0
+2014-11,"Equal industry, net",0.0
+2014-11,Broad market,0.0
+2014-12,"Equal industry, net",-0.0011266031715387
+2014-12,Broad market,-0.0004999999999999
+2015-01,"Equal industry, net",-0.0259205686512785
+2015-01,Broad market,-0.0313845499999998
+2015-02,"Equal industry, net",0.0
+2015-02,Broad market,0.0
+2015-03,"Equal industry, net",-0.011592501882719
+2015-03,Broad market,-0.0109
+2015-04,"Equal industry, net",-0.0033806578270793
+2015-04,Broad market,-0.0049654000000001
+2015-05,"Equal industry, net",0.0
+2015-05,Broad market,0.0
+2015-06,"Equal industry, net",-0.0187547422176669
+2015-06,Broad market,-0.0154
+2015-07,"Equal industry, net",-0.0103990491477452
+2015-07,Broad market,0.0
+2015-08,"Equal industry, net",-0.0673105900673666
+2015-08,Broad market,-0.0602
+2015-09,"Equal industry, net",-0.0956385548714647
+2015-09,Broad market,-0.0889578799999999
+2015-10,"Equal industry, net",-0.0273577098432429
+2015-10,Broad market,-0.0183521157
+2015-11,"Equal industry, net",-0.0260345932520075
+2015-11,Broad market,-0.0127567227594902
+2015-12,"Equal industry, net",-0.0510002369336343
+2015-12,Broad market,-0.033883728892437
+2016-01,"Equal industry, net",-0.0951645366581903
+2016-01,Broad market,-0.0892421912269004
+2016-02,"Equal industry, net",-0.0902253272250802
+2016-02,Broad market,-0.0896975701312868
+2016-03,"Equal industry, net",-0.0242273324495367
+2016-03,Broad market,-0.0262494907694375
+2016-04,"Equal industry, net",-0.0088459892241641
+2016-04,Broad market,-0.0172909860845162
+2016-05,"Equal industry, net",0.0
+2016-05,Broad market,0.0
+2016-06,"Equal industry, net",0.0
+2016-06,Broad market,-9.9999999999989e-05
+2016-07,"Equal industry, net",0.0
+2016-07,Broad market,0.0
+2016-08,"Equal industry, net",-0.0037570864010222
+2016-08,Broad market,0.0
+2016-09,"Equal industry, net",-0.0015359952117726
+2016-09,Broad market,0.0
+2016-10,"Equal industry, net",-0.0266805515309067
+2016-10,Broad market,-0.0198999999999999
+2016-11,"Equal industry, net",0.0
+2016-11,Broad market,0.0
+2016-12,"Equal industry, net",0.0
+2016-12,Broad market,0.0
+2017-01,"Equal industry, net",0.0
+2017-01,Broad market,0.0
+2017-02,"Equal industry, net",0.0
+2017-02,Broad market,0.0
+2017-03,"Equal industry, net",0.0
+2017-03,Broad market,0.0
+2017-04,"Equal industry, net",0.0
+2017-04,Broad market,0.0
+2017-05,"Equal industry, net",0.0
+2017-05,Broad market,0.0
+2017-06,"Equal industry, net",0.0
+2017-06,Broad market,0.0
+2017-07,"Equal industry, net",0.0
+2017-07,Broad market,0.0
+2017-08,"Equal industry, net",-0.003414585441464
+2017-08,Broad market,0.0
+2017-09,"Equal industry, net",0.0
+2017-09,Broad market,0.0
+2017-10,"Equal industry, net",0.0
+2017-10,Broad market,0.0
+2017-11,"Equal industry, net",0.0
+2017-11,Broad market,0.0
+2017-12,"Equal industry, net",0.0
+2017-12,Broad market,0.0
+2018-01,"Equal industry, net",0.0
+2018-01,Broad market,0.0
+2018-02,"Equal industry, net",-0.0499835388764045
+2018-02,Broad market,-0.0353
+2018-03,"Equal industry, net",-0.0651371906321337
+2018-03,Broad market,-0.05681281
+2018-04,"Equal industry, net",-0.0587150000119743
+2018-04,Broad market,-0.052757105083
+2018-05,"Equal industry, net",-0.0409898400084093
+2018-05,Broad market,-0.0265184768937991
+2018-06,"Equal industry, net",-0.0250966067404735
+2018-06,Broad market,-0.02038554329823
+2018-07,"Equal industry, net",0.0
+2018-07,Broad market,0.0
+2018-08,"Equal industry, net",0.0
+2018-08,Broad market,0.0
+2018-09,"Equal industry, net",0.0
+2018-09,Broad market,0.0
+2018-10,"Equal industry, net",-0.0583838551689941
+2018-10,Broad market,-0.0745
+2018-11,"Equal industry, net",-0.0355428741215451
+2018-11,Broad market,-0.05700805
+2018-12,"Equal industry, net",-0.1266153141383363
+2018-12,Broad market,-0.14527209652
+2019-01,"Equal industry, net",-0.0551737719154762
+2019-01,Broad market,-0.072021915191764
+2019-02,"Equal industry, net",-0.0247860276741345
+2019-02,Broad market,-0.0386147041386675
+2019-03,"Equal industry, net",-0.0150051094438078
+2019-03,Broad market,-0.0262128338220563
+2019-04,"Equal industry, net",0.0
+2019-04,Broad market,0.0
+2019-05,"Equal industry, net",-0.0675907829258714
+2019-05,Broad market,-0.0670999999999999
+2019-06,"Equal industry, net",0.0
+2019-06,Broad market,-0.0002110699999997
+2019-07,"Equal industry, net",0.0
+2019-07,Broad market,0.0
+2019-08,"Equal industry, net",-0.0203048621209458
+2019-08,Broad market,-0.0238999999999999
+2019-09,"Equal industry, net",0.0
+2019-09,Broad market,-0.0082823999999999
+2019-10,"Equal industry, net",0.0
+2019-10,Broad market,0.0
+2019-11,"Equal industry, net",0.0
+2019-11,Broad market,0.0
+2019-12,"Equal industry, net",0.0
+2019-12,Broad market,0.0
+2020-01,"Equal industry, net",-0.0051834067268501
+2020-01,Broad market,0.0
+2020-02,"Equal industry, net",-0.0898842219549146
+2020-02,Broad market,-0.0803
+2020-03,"Equal industry, net",-0.2293126132797019
+2020-03,Broad market,-0.20197631
+2020-04,"Equal industry, net",-0.114655001365846
+2020-04,Broad market,-0.0936046928980001
+2020-05,"Equal industry, net",-0.073165306074716
+2020-05,Broad market,-0.0428465557002883
+2020-06,"Equal industry, net",-0.0567073867824511
+2020-06,Broad market,-0.0193962963149454
+2020-07,"Equal industry, net",0.0
+2020-07,Broad market,0.0
+2020-08,"Equal industry, net",0.0
+2020-08,Broad market,0.0
+2020-09,"Equal industry, net",-0.0420824925519344
+2020-09,Broad market,-0.0363
+2020-10,"Equal industry, net",-0.0623559111355032
+2020-10,Broad market,-0.05624859
+2020-11,"Equal industry, net",0.0
+2020-11,Broad market,0.0
+2020-12,"Equal industry, net",0.0
+2020-12,Broad market,0.0
+2021-01,"Equal industry, net",0.0
+2021-01,Broad market,-0.0007000000000001
+2021-02,"Equal industry, net",0.0
+2021-02,Broad market,0.0
+2021-03,"Equal industry, net",0.0
+2021-03,Broad market,0.0
+2021-04,"Equal industry, net",0.0
+2021-04,Broad market,0.0
+2021-05,"Equal industry, net",0.0
+2021-05,Broad market,0.0
+2021-06,"Equal industry, net",0.0
+2021-06,Broad market,0.0
+2021-07,"Equal industry, net",0.0
+2021-07,Broad market,0.0
+2021-08,"Equal industry, net",0.0
+2021-08,Broad market,0.0
+2021-09,"Equal industry, net",-0.0259429738224895
+2021-09,Broad market,-0.044
+2021-10,"Equal industry, net",0.0
+2021-10,Broad market,0.0
+2021-11,"Equal industry, net",-0.0239397462719137
+2021-11,Broad market,-0.0157999999999999
+2021-12,"Equal industry, net",0.0
+2021-12,Broad market,0.0
+2022-01,"Equal industry, net",-0.0327264574681815
+2022-01,Broad market,-0.0615
+2022-02,"Equal industry, net",-0.0425567293018658
+2022-02,Broad market,-0.0828977999999999
+2022-03,"Equal industry, net",0.0
+2022-03,Broad market,-0.05465105224
+2022-04,"Equal industry, net",-0.0739476754194041
+2022-04,Broad market,-0.1436083882242159
+2022-05,"Equal industry, net",-0.0616017328894853
+2022-05,Broad market,-0.1461775630595433
+2022-06,"Equal industry, net",-0.13928730220828
+2022-06,Broad market,-0.2173863543003774
+2022-07,"Equal industry, net",-0.0576875221183775
+2022-07,Broad market,-0.1418641374903639
+2022-08,"Equal industry, net",-0.0827410249356147
+2022-08,Broad market,-0.1725854013682088
+2022-09,"Equal industry, net",-0.1656045462063701
+2022-09,Broad market,-0.2482938371430177
+2022-10,"Equal industry, net",-0.0966000171749413
+2022-10,Broad market,-0.1874808085678879
+2022-11,"Equal industry, net",-0.0634646080787093
+2022-11,Broad market,-0.1470173528345686
+2022-12,"Equal industry, net",-0.1273724190548893
+2022-12,Broad market,-0.1986228029880772
+2023-01,"Equal industry, net",-0.061553821330756
+2023-01,Broad market,-0.1429270877957487
+2023-02,"Equal industry, net",-0.0835300183128463
+2023-02,Broad market,-0.1620398137379034
+2023-03,"Equal industry, net",-0.067366751479629
+2023-03,Broad market,-0.1381579484294338
+2023-04,"Equal industry, net",-0.0664423354660208
+2023-04,Broad market,-0.1297118963240423
+2023-05,"Equal industry, net",-0.0847600876352875
+2023-05,Broad market,-0.1237069084086783
+2023-06,"Equal industry, net",-0.0137124378562255
+2023-06,Broad market,-0.0635932023255138
+2023-07,"Equal industry, net",0.0
+2023-07,Broad market,-0.0293207135306277
+2023-08,"Equal industry, net",-0.0193848011727649
+2023-08,Broad market,-0.0478606879021926
+2023-09,"Equal industry, net",-0.057794247773206
+2023-09,Broad market,-0.0935633748828874
+2023-10,"Equal industry, net",-0.0937669471313246
+2023-10,Broad market,-0.117855876436026
+2023-11,"Equal industry, net",-0.0252451825283805
+2023-11,Broad market,-0.0356400441198636
+2023-12,"Equal industry, net",0.0
+2023-12,Broad market,0.0
+2024-01,"Equal industry, net",-0.0107292274611938
+2024-01,Broad market,0.0
+2024-02,"Equal industry, net",0.0
+2024-02,Broad market,0.0
+2024-03,"Equal industry, net",0.0
+2024-03,Broad market,0.0
+2024-04,"Equal industry, net",-0.0314238089108106
+2024-04,Broad market,-0.0417999999999999
+2024-05,"Equal industry, net",-0.0007914602223095
+2024-05,Broad market,0.0
+2024-06,"Equal industry, net",0.0
+2024-06,Broad market,0.0
+2024-07,"Equal industry, net",0.0
+2024-07,Broad market,0.0
+2024-08,"Equal industry, net",0.0
+2024-08,Broad market,0.0
+2024-09,"Equal industry, net",0.0
+2024-09,Broad market,0.0
+2024-10,"Equal industry, net",-0.0106715568001396
+2024-10,Broad market,-0.0060999999999997
+2024-11,"Equal industry, net",0.0
+2024-11,Broad market,0.0
+2024-12,"Equal industry, net",-0.0394949826143586
+2024-12,Broad market,-0.0279
+2025-01,"Equal industry, net",-0.01045707597736
+2025-01,Broad market,0.0
+2025-02,"Equal industry, net",-0.0198590401461711
+2025-02,Broad market,-0.021
+2025-03,"Equal industry, net",-0.0550613666847429
+2025-03,Broad market,-0.0802294999999999
+2025-04,"Equal industry, net",-0.0713962787501609
+2025-04,Broad market,-0.0847363754499999
+2025-05,"Equal industry, net",-0.0226112583973625
+2025-05,Broad market,-0.0257933980289799
+2025-06,"Equal industry, net",0.0
+2025-06,Broad market,0.0
+2025-07,"Equal industry, net",0.0
+2025-07,Broad market,0.0
+2025-08,"Equal industry, net",0.0
+2025-08,Broad market,0.0
+2025-09,"Equal industry, net",0.0
+2025-09,Broad market,0.0
+2025-10,"Equal industry, net",0.0
+2025-10,Broad market,0.0
+2025-11,"Equal industry, net",0.0
+2025-11,Broad market,0.0
+2025-12,"Equal industry, net",0.0
+2025-12,Broad market,-0.0001999999999998
+2026-01,"Equal industry, net",0.0
+2026-01,Broad market,0.0
+2026-02,"Equal industry, net",0.0
+2026-02,Broad market,-0.009
+2026-03,"Equal industry, net",-0.0387447966696455
+2026-03,Broad market,-0.0574598999999999
+2026-04,"Equal industry, net",0.0
+2026-04,Broad market,0.0
+2026-05,"Equal industry, net",0.0
+2026-05,Broad market,0.0
+2026-06,"Equal industry, net",0.0
+2026-06,Broad market,-0.0078000000000001
+2026-07,"Equal industry, net",-0.0033537777746713
+2026-07,Broad market,-0.0105781599999998
+2026-08,"Equal industry, net",0.0
+2026-08,Broad market,0.0

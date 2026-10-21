@@ -1,0 +1,15 @@
+{
+  "downloaded_at_utc": "2026-10-21T01:34:33.410873+00:00",
+  "series": {
+    "USREC": {
+      "source_url": "https://fred.stlouisfed.org/series/USREC",
+      "csv_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=USREC",
+      "sha256": "a42a3581fe9c260dd3627febc84a7d563e5ed162cc7085a7518ebde99dc3c3b4"
+    },
+    "CPIAUCSL": {
+      "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "csv_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL",
+      "sha256": "8556b710094027fa4724641d48be620cc37c04abfa15a0c496378cf1146c1549"
+    }
+  }
+}

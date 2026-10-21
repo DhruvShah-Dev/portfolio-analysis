@@ -1,0 +1,21 @@
+# Downloaded third-party source data and full normalized panels
+data/raw/
+data/processed/
+analysis/monthly_analysis.csv
+
+# Local environments and temporary report/browser files
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+analysis/candidate.html
+analysis/static_candidate.html
+analysis/harness.html
+analysis/dom.txt
+analysis/chrome.err
+analysis/*verification-failure.png
+analysis/report_*.png
+
+# Editor and OS files
+.DS_Store
+Thumbs.db

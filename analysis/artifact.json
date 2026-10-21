@@ -1,0 +1,7331 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Equal industry allocation: a modest long-run edge, a recent reversal",
+    "description": "Public-data portfolio analyst case study with performance, risk, factor, and cost analysis.",
+    "generatedAt": "2026-10-21T01:34:37.568904+00:00",
+    "cards": [
+      {
+        "id": "portfolio_return",
+        "description": "Geometric annual return after modeled rebalancing costs, January 2000–August 2026.",
+        "dataset": "headline",
+        "sourceId": "dataset_headline",
+        "metrics": [
+          {
+            "label": "Portfolio annual return",
+            "field": "portfolio_return",
+            "format": "percent"
+          },
+          {
+            "label": "Market",
+            "field": "market_return",
+            "format": "percent"
+          }
+        ]
+      },
+      {
+        "id": "volatility",
+        "description": "Standard deviation of monthly returns multiplied by the square root of 12.",
+        "dataset": "headline",
+        "sourceId": "dataset_headline",
+        "metrics": [
+          {
+            "label": "Portfolio volatility",
+            "field": "portfolio_volatility",
+            "format": "percent"
+          },
+          {
+            "label": "Market",
+            "field": "market_volatility",
+            "format": "percent"
+          }
+        ]
+      },
+      {
+        "id": "drawdown",
+        "description": "Largest peak-to-trough loss on monthly compounded wealth.",
+        "dataset": "headline",
+        "sourceId": "dataset_headline",
+        "metrics": [
+          {
+            "label": "Portfolio max drawdown",
+            "field": "portfolio_drawdown",
+            "format": "percent"
+          },
+          {
+            "label": "Market",
+            "field": "market_drawdown",
+            "format": "percent"
+          }
+        ]
+      },
+      {
+        "id": "recent_gap",
+        "description": "Portfolio annualized return minus market annualized return in percentage points, January 2015–August 2026.",
+        "dataset": "headline",
+        "sourceId": "dataset_headline",
+        "metrics": [
+          {
+            "label": "Return gap since 2015 (pp)",
+            "field": "recent_gap_pp",
+            "format": "number",
+            "unit": "pp",
+            "signed": true
+          }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "id": "wealth",
+        "title": "Growth of $1, January 2000–August 2026",
+        "type": "line",
+        "dataset": "wealth",
+        "sourceId": "dataset_wealth",
+        "encodings": {
+          "x": {
+            "field": "month",
+            "type": "ordinal",
+            "label": "Month"
+          },
+          "y": {
+            "field": "growth",
+            "type": "quantitative",
+            "label": "Growth of $1"
+          },
+          "color": {
+            "field": "series",
+            "type": "nominal",
+            "label": "Series"
+          }
+        }
+      },
+      {
+        "id": "annual_active",
+        "title": "Yearly return gap versus market (2026 through August)",
+        "type": "bar",
+        "dataset": "annual_active",
+        "sourceId": "dataset_annual_active",
+        "encodings": {
+          "x": {
+            "field": "year",
+            "type": "ordinal",
+            "label": "Year"
+          },
+          "y": {
+            "field": "active_gap",
+            "type": "quantitative",
+            "label": "Portfolio minus market",
+            "format": "percent"
+          }
+        },
+        "valueFormat": "percent"
+      },
+      {
+        "id": "drawdown",
+        "title": "Monthly peak-to-trough drawdown",
+        "type": "line",
+        "dataset": "drawdown",
+        "sourceId": "dataset_drawdown",
+        "encodings": {
+          "x": {
+            "field": "month",
+            "type": "ordinal",
+            "label": "Month"
+          },
+          "y": {
+            "field": "drawdown",
+            "type": "quantitative",
+            "label": "Drawdown",
+            "format": "percent"
+          },
+          "color": {
+            "field": "series",
+            "type": "nominal",
+            "label": "Series"
+          }
+        },
+        "valueFormat": "percent"
+      },
+      {
+        "id": "sector_contribution",
+        "title": "Mean monthly gross contribution by industry",
+        "type": "bar",
+        "dataset": "sector_contribution",
+        "sourceId": "dataset_sector_contribution",
+        "encodings": {
+          "x": {
+            "field": "industry",
+            "type": "ordinal",
+            "label": "Industry"
+          },
+          "y": {
+            "field": "mean_monthly_contribution",
+            "type": "quantitative",
+            "label": "Mean contribution",
+            "format": "percent"
+          }
+        },
+        "valueFormat": "percent"
+      }
+    ],
+    "tables": [
+      {
+        "id": "periods",
+        "title": "Annualized return by period",
+        "dataset": "periods",
+        "sourceId": "dataset_periods",
+        "defaultSort": {
+          "field": "period",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "period",
+            "label": "Period",
+            "type": "text"
+          },
+          {
+            "field": "portfolio_return",
+            "label": "Portfolio",
+            "format": "percent"
+          },
+          {
+            "field": "market_return",
+            "label": "Market",
+            "format": "percent"
+          },
+          {
+            "field": "return_gap",
+            "label": "Gap",
+            "format": "percent"
+          }
+        ]
+      },
+      {
+        "id": "factor_models",
+        "title": "Historical return regressions",
+        "dataset": "factor_models",
+        "sourceId": "dataset_factor_models",
+        "defaultSort": {
+          "field": "model",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "model",
+            "label": "Model",
+            "type": "text"
+          },
+          {
+            "field": "alpha",
+            "label": "Annual residual",
+            "format": "percent"
+          },
+          {
+            "field": "ci_range",
+            "label": "95% interval",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "costs",
+        "title": "Trading-cost sensitivity",
+        "dataset": "costs",
+        "sourceId": "dataset_costs",
+        "defaultSort": {
+          "field": "trading_cost_bps",
+          "direction": "asc"
+        },
+        "columns": [
+          {
+            "field": "trading_cost_bps",
+            "label": "Basis points per traded dollar",
+            "format": "number"
+          },
+          {
+            "field": "annualized_return",
+            "label": "Portfolio annual return",
+            "format": "percent"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "analysis_code",
+        "label": "Portfolio analysis calculations",
+        "path": "analyze.py",
+        "query": {
+          "engine": "python",
+          "language": "python",
+          "description": "Reproducible monthly portfolio, benchmark, risk, factor, and sensitivity calculations from local source files.",
+          "tables_used": [
+            "data/processed/industry_monthly_returns.csv",
+            "data/processed/market_factors_monthly.csv",
+            "data/raw/fred_usrec.csv",
+            "data/raw/fred_cpiaucsl.csv"
+          ],
+          "filters": [
+            "January 2000 through August 2026",
+            "Ten value-weighted U.S. industry return series",
+            "Monthly rebalance to 10% per industry"
+          ]
+        }
+      },
+      {
+        "id": "french_industry",
+        "label": "Kenneth French 10 Industry Portfolios",
+        "path": "data/raw/industries.zip",
+        "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"
+      },
+      {
+        "id": "french_factors",
+        "label": "Kenneth French 5 Factors",
+        "path": "data/raw/factors.zip",
+        "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"
+      },
+      {
+        "id": "fred_recession",
+        "label": "FRED USREC recession indicator",
+        "path": "data/raw/fred_usrec.csv",
+        "url": "https://fred.stlouisfed.org/series/USREC"
+      },
+      {
+        "id": "fred_cpi",
+        "label": "FRED CPIAUCSL consumer price index",
+        "path": "data/raw/fred_cpiaucsl.csv",
+        "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
+      },
+      {
+        "id": "dataset_headline",
+        "label": "Reviewed report dataset: headline",
+        "path": "analysis/report_snapshot/headline.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/headline.csv')",
+          "description": "Reads the headline report snapshot generated from analyze.py results.",
+          "tables_used": [
+            "analysis/report_snapshot/headline.csv"
+          ]
+        }
+      },
+      {
+        "id": "dataset_wealth",
+        "label": "Reviewed report dataset: wealth",
+        "path": "analysis/report_snapshot/wealth.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/wealth.csv')",
+          "description": "Reads the wealth report snapshot generated from analyze.py results.",
+          "tables_used": [
+            "analysis/report_snapshot/wealth.csv"
+          ]
+        }
+      },
+      {
+        "id": "dataset_drawdown",
+        "label": "Reviewed report dataset: drawdown",
+        "path": "analysis/report_snapshot/drawdown.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/drawdown.csv')",
+          "description": "Reads the drawdown report snapshot generated from analyze.py results.",
+          "tables_used": [
+            "analysis/report_snapshot/drawdown.csv"
+          ]
+        }
+      },
+      {
+        "id": "dataset_annual_active",
+        "label": "Reviewed report dataset: annual_active",
+        "path": "analysis/report_snapshot/annual_active.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/annual_active.csv')",
+          "description": "Reads the annual_active report snapshot generated from analyze.py results.",
+          "tables_used": [
+            "analysis/report_snapshot/annual_active.csv"
+          ]
+        }
+      },
+      {
+        "id": "dataset_periods",
+        "label": "Reviewed report dataset: periods",
+        "path": "analysis/report_snapshot/periods.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/periods.csv')",
+          "description": "Reads the periods report snapshot generated from analyze.py results.",
+          "tables_used": [
+            "analysis/report_snapshot/periods.csv"
+          ]
+        }
+      },
+      {
+        "id": "dataset_factor_models",
+        "label": "Reviewed report dataset: factor_models",
+        "path": "analysis/report_snapshot/factor_models.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/factor_models.csv')",
+          "description": "Reads the factor_models report snapshot generated from analyze.py results.",
+          "tables_used": [
+            "analysis/report_snapshot/factor_models.csv"
+          ]
+        }
+      },
+      {
+        "id": "dataset_costs",
+        "label": "Reviewed report dataset: costs",
+        "path": "analysis/report_snapshot/costs.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/costs.csv')",
+          "description": "Reads the costs report snapshot generated from analyze.py results.",
+          "tables_used": [
+            "analysis/report_snapshot/costs.csv"
+          ]
+        }
+      },
+      {
+        "id": "dataset_sector_contribution",
+        "label": "Reviewed report dataset: sector_contribution",
+        "path": "analysis/report_snapshot/sector_contribution.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/sector_contribution.csv')",
+          "description": "Reads the sector_contribution report snapshot generated from analyze.py results.",
+          "tables_used": [
+            "analysis/report_snapshot/sector_contribution.csv"
+          ]
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# Equal industry allocation: a modest long-run edge, a recent reversal\n\nA public-data portfolio analyst case study · January 2000–August 2026 · Prepared October 2026"
+      },
+      {
+        "id": "executive",
+        "type": "markdown",
+        "body": "## Executive Summary\n\n- **The long-run result is positive but modest.** A hypothetical 10% allocation to each of ten U.S. industry research portfolios, rebalanced monthly, earned **9.3% a year after modeled trading costs**, versus **8.5%** for the broad-market research benchmark. The annualized gap was **0.77 percentage points**.\n- **The recent result argues against a simple outperform claim.** From 2015 through August 2026, the same rule earned **12.1%** versus **13.7%** for the market. Only **58.6%** of overlapping five-year windows beat the market.\n- **Treat this as a risk and attribution prototype.** The portfolio had slightly lower volatility and a shallower historical drawdown, but its five-factor residual was negative. The source industries are research portfolios, so investable implementation and actual holdings remain to be tested."
+      },
+      {
+        "id": "metrics",
+        "type": "metric-strip",
+        "cardIds": [
+          "portfolio_return",
+          "volatility",
+          "drawdown",
+          "recent_gap"
+        ]
+      },
+      {
+        "id": "definitions",
+        "type": "markdown",
+        "body": "## Mandate and measurement\n\nThe proposed mandate is a simple, transparent equal-industry U.S. equity allocation. At the start of every month, each of ten value-weighted industry research portfolios receives 10% of capital. The market comparison is the Kenneth French U.S. market return (`Mkt-RF + RF`), matched month for month. Portfolio returns include dividends; the simulation applies 10 basis points to every dollar bought or sold at each monthly rebalance, including the initial purchase. Annual returns are geometric; volatility and tracking error annualize monthly standard deviations with √12. Sharpe uses the same monthly risk-free return as the factor file. Drawdowns use monthly closes."
+      },
+      {
+        "id": "long_run",
+        "type": "markdown",
+        "body": "## The full-period advantage is concentrated in a long history\n\nCompounded from $1 at the start of 2000, the net portfolio reached **$10.75** by August 2026 versus **$8.91** for the market. This is a real historical difference for the stated research series, but its size is sensitive to the window: 2000 began just before the technology bust. The chart shows a simulation, not a client account."
+      },
+      {
+        "id": "wealth_chart",
+        "type": "chart",
+        "chartId": "wealth",
+        "layout": "full"
+      },
+      {
+        "id": "recent",
+        "type": "markdown",
+        "body": "## Recent market leadership reverses the ranking\n\nThe portfolio lagged by **1.59 percentage points a year** from 2015 to August 2026. Calendar years also show that active results were uneven: the return gap was **+13.1 points in 2000** and **−8.0 points in 2023**. Overlapping five-year windows beat the market **58.6%** of the time; the worst five-year cumulative gap was **-28.4 points**. Period selection can therefore change the headline."
+      },
+      {
+        "id": "period_table",
+        "type": "table",
+        "tableId": "periods",
+        "layout": "full"
+      },
+      {
+        "id": "annual_chart",
+        "type": "chart",
+        "chartId": "annual_active",
+        "layout": "full"
+      },
+      {
+        "id": "risk",
+        "type": "markdown",
+        "body": "## Diversification softened losses, but did not prevent a crisis drawdown\n\nThe portfolio's annualized volatility was **14.9%**, versus **15.7%** for the market. Both reached their deepest monthly drawdown in February 2009: **-48.1%** for the portfolio and **-50.3%** for the market. The portfolio's market beta was **0.92** and tracking error **4.2%**. This is still predominantly equity risk, with a meaningful possibility of large losses."
+      },
+      {
+        "id": "drawdown_chart",
+        "type": "chart",
+        "chartId": "drawdown",
+        "layout": "full"
+      },
+      {
+        "id": "macro",
+        "type": "markdown",
+        "body": "## Macro checks add context, not a timing rule\n\nAfter adjusting the full-period ending wealth by the change in the U.S. consumer price index, the portfolio's $1 start was worth **$5.43** in December 1999 purchasing power versus **$4.50** for the market. Across **28 NBER-based recession months** in the analysis window, average portfolio-minus-market return was only **0.06 percentage points per month**, close to **0.05 points** in expansions. This small, retrospective comparison does not support a recession-timing claim. The missing October 2025 CPI value prevents a complete monthly real-return series, so the inflation comparison uses only the start and end index levels."
+      },
+      {
+        "id": "factors",
+        "type": "markdown",
+        "body": "## Factor exposures account for much of the apparent alpha\n\nA market-only monthly regression estimates an approximately **+1.2% annual residual**; a five-factor regression estimates **-0.4%**. The five-factor fit rises from **92.9%** to **95.9%**. Its positive historical profitability, investment, and value loadings suggest that style exposures explain some of the market-relative difference. Six-lag robust 95% intervals include zero for both residuals; these models do not establish persistent or forward-looking alpha."
+      },
+      {
+        "id": "factor_table",
+        "type": "table",
+        "tableId": "factor_models",
+        "layout": "full"
+      },
+      {
+        "id": "sector",
+        "type": "markdown",
+        "body": "## Industry contribution was broad, with different risk profiles\n\nEvery industry made a positive average gross contribution over the full window under fixed 10% monthly starting weights. Durable goods contributed the most on average, but also had the highest standalone volatility (33.0% annualized). Telecommunications contributed the least. This is arithmetic contribution to the simulated portfolio's monthly return; without benchmark industry weights, it is not Brinson allocation or selection attribution."
+      },
+      {
+        "id": "sector_chart",
+        "type": "chart",
+        "chartId": "sector_contribution",
+        "layout": "full"
+      },
+      {
+        "id": "implementation",
+        "type": "markdown",
+        "body": "## Implementation economics need an investable test\n\nThe simulated strategy's average annual one-way rebalance turnover was **16.0%**. At 10 basis points per traded dollar, modeled trading reduced annualized return by about **0.04 percentage points**. Even a 100 basis point sensitivity leaves this research-series return above the benchmark for the full period, but that exercise does not capture fund expense ratios, taxes, market impact, or the cost of replicating the underlying research portfolios. The benchmark is also shown without an implementation fee."
+      },
+      {
+        "id": "cost_table",
+        "type": "table",
+        "tableId": "costs",
+        "layout": "full"
+      },
+      {
+        "id": "next",
+        "type": "markdown",
+        "body": "## Recommended next steps\n\n1. Rebuild the same allocation with an investable, historically available set of sector funds, incorporating distributions, expense ratios, and fund inception dates. Compare it with an investable broad-market fund on the same dates.\n2. Add a holdings-based attribution exercise using actual disclosed positions or a public fund holdings file. Keep holdings dates and publication lags explicit; do not infer trades from successive snapshots.\n3. Reassess the mandate against a risk budget, especially maximum drawdown, tracking error, and concentration; then examine rolling five-year performance before deciding whether the allocation adds value."
+      },
+      {
+        "id": "questions",
+        "type": "markdown",
+        "body": "## Further questions\n\nWould an annual rebalance retain the diversification benefit with less trading? How much of the recent lag comes from persistent sector weight differences versus within-industry returns? Would a client prefer a lower beta and drawdown profile even if recent market-relative returns remain weaker? Each question requires an explicit mandate and investable proxy before answering."
+      },
+      {
+        "id": "caveats",
+        "type": "markdown",
+        "body": "## Caveats and sources\n\n**Research series.** [Kenneth French's Data Library](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html) supplies the 10 value-weighted industry returns and five factors. The [industry methodology](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library/det_10_ind_port.html) resets SIC-based membership each June. These are constructed portfolios, not fund NAVs or actual holdings. Source histories may be revised, and the library changed its CRSP return process in January 2025. The source URLs and ZIP SHA-256 hashes in `analysis/provenance/source_manifest.json` identify this vintage.\n\n**Macro context.** [FRED USREC](https://fred.stlouisfed.org/series/USREC) and [FRED CPIAUCSL](https://fred.stlouisfed.org/series/CPIAUCSL) were downloaded for regime and inflation checks. The CPI feed has no October 2025 observation, so no monthly inflation value was imputed. Endpoint CPI levels can still support a full-window purchasing-power comparison. Recession months are descriptive context and were not used to pick weights.\n\n**Modeling limits.** Weights were fixed at 10% each, not optimized. Rebalance costs are assumed, not observed. Tax, financing, fund fees, spreads inside the research portfolios, and cash drag are excluded. The factor regressions do not establish persistent alpha. This report is a historical analytical case study, not personalized investment advice."
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-10-21T01:34:37.568904+00:00",
+    "status": "ready",
+    "datasets": {
+      "headline": [
+        {
+          "portfolio_return": 0.0931616213,
+          "market_return": 0.0854881439,
+          "portfolio_volatility": 0.1489906715,
+          "market_volatility": 0.156523136,
+          "portfolio_drawdown": -0.4808768145,
+          "market_drawdown": -0.5030641443,
+          "recent_gap_pp": -1.5931439982
+        }
+      ],
+      "wealth": [
+        {
+          "month": "2000-01",
+          "series": "Equal industry, net",
+          "growth": 0.97394508
+        },
+        {
+          "month": "2000-01",
+          "series": "Broad market",
+          "growth": 0.9567
+        },
+        {
+          "month": "2000-02",
+          "series": "Equal industry, net",
+          "growth": 0.9437274368
+        },
+        {
+          "month": "2000-02",
+          "series": "Broad market",
+          "growth": 0.98425296
+        },
+        {
+          "month": "2000-03",
+          "series": "Equal industry, net",
+          "growth": 1.0226998739
+        },
+        {
+          "month": "2000-03",
+          "series": "Broad market",
+          "growth": 1.0401585281
+        },
+        {
+          "month": "2000-04",
+          "series": "Equal industry, net",
+          "growth": 1.0146397192
+        },
+        {
+          "month": "2000-04",
+          "series": "Broad market",
+          "growth": 0.9788931908
+        },
+        {
+          "month": "2000-05",
+          "series": "Equal industry, net",
+          "growth": 1.0042788473
+        },
+        {
+          "month": "2000-05",
+          "series": "Broad market",
+          "growth": 0.9408142457
+        },
+        {
+          "month": "2000-06",
+          "series": "Equal industry, net",
+          "growth": 1.0086814428
+        },
+        {
+          "month": "2000-06",
+          "series": "Broad market",
+          "growth": 0.9886076094
+        },
+        {
+          "month": "2000-07",
+          "series": "Equal industry, net",
+          "growth": 0.9989222125
+        },
+        {
+          "month": "2000-07",
+          "series": "Broad market",
+          "growth": 0.9688354572
+        },
+        {
+          "month": "2000-08",
+          "series": "Equal industry, net",
+          "growth": 1.0515360566
+        },
+        {
+          "month": "2000-08",
+          "series": "Broad market",
+          "growth": 1.0417887671
+        },
+        {
+          "month": "2000-09",
+          "series": "Equal industry, net",
+          "growth": 1.0458425052
+        },
+        {
+          "month": "2000-09",
+          "series": "Broad market",
+          "growth": 0.9904285809
+        },
+        {
+          "month": "2000-10",
+          "series": "Equal industry, net",
+          "growth": 1.0461310613
+        },
+        {
+          "month": "2000-10",
+          "series": "Broad market",
+          "growth": 0.9684410664
+        },
+        {
+          "month": "2000-11",
+          "series": "Equal industry, net",
+          "growth": 0.9863876115
+        },
+        {
+          "month": "2000-11",
+          "series": "Broad market",
+          "growth": 0.8697569217
+        },
+        {
+          "month": "2000-12",
+          "series": "Equal industry, net",
+          "growth": 1.0157382585
+        },
+        {
+          "month": "2000-12",
+          "series": "Broad market",
+          "growth": 0.884368838
+        },
+        {
+          "month": "2001-01",
+          "series": "Equal industry, net",
+          "growth": 1.0425515963
+        },
+        {
+          "month": "2001-01",
+          "series": "Broad market",
+          "growth": 0.917886417
+        },
+        {
+          "month": "2001-02",
+          "series": "Equal industry, net",
+          "growth": 0.9953078885
+        },
+        {
+          "month": "2001-02",
+          "series": "Broad market",
+          "growth": 0.8293103777
+        },
+        {
+          "month": "2001-03",
+          "series": "Equal industry, net",
+          "growth": 0.9464223154
+        },
+        {
+          "month": "2001-03",
+          "series": "Broad market",
+          "growth": 0.7726684789
+        },
+        {
+          "month": "2001-04",
+          "series": "Equal industry, net",
+          "growth": 1.0131606462
+        },
+        {
+          "month": "2001-04",
+          "series": "Broad market",
+          "growth": 0.8370317632
+        },
+        {
+          "month": "2001-05",
+          "series": "Equal industry, net",
+          "growth": 1.0209820075
+        },
+        {
+          "month": "2001-05",
+          "series": "Broad market",
+          "growth": 0.8454020809
+        },
+        {
+          "month": "2001-06",
+          "series": "Equal industry, net",
+          "growth": 0.9975721151
+        },
+        {
+          "month": "2001-06",
+          "series": "Broad market",
+          "growth": 0.8313684063
+        },
+        {
+          "month": "2001-07",
+          "series": "Equal industry, net",
+          "growth": 0.9908724892
+        },
+        {
+          "month": "2001-07",
+          "series": "Broad market",
+          "growth": 0.8161543645
+        },
+        {
+          "month": "2001-08",
+          "series": "Equal industry, net",
+          "growth": 0.9416006735
+        },
+        {
+          "month": "2001-08",
+          "series": "Broad market",
+          "growth": 0.7664505637
+        },
+        {
+          "month": "2001-09",
+          "series": "Equal industry, net",
+          "growth": 0.8609377228
+        },
+        {
+          "month": "2001-09",
+          "series": "Broad market",
+          "growth": 0.6977765932
+        },
+        {
+          "month": "2001-10",
+          "series": "Equal industry, net",
+          "growth": 0.8791171841
+        },
+        {
+          "month": "2001-10",
+          "series": "Broad market",
+          "growth": 0.7166165612
+        },
+        {
+          "month": "2001-11",
+          "series": "Equal industry, net",
+          "growth": 0.9355051578
+        },
+        {
+          "month": "2001-11",
+          "series": "Broad market",
+          "growth": 0.7717960364
+        },
+        {
+          "month": "2001-12",
+          "series": "Equal industry, net",
+          "growth": 0.9549855711
+        },
+        {
+          "month": "2001-12",
+          "series": "Broad market",
+          "growth": 0.7853796467
+        },
+        {
+          "month": "2002-01",
+          "series": "Equal industry, net",
+          "growth": 0.9445085906
+        },
+        {
+          "month": "2002-01",
+          "series": "Broad market",
+          "growth": 0.7751697113
+        },
+        {
+          "month": "2002-02",
+          "series": "Equal industry, net",
+          "growth": 0.9447862924
+        },
+        {
+          "month": "2002-02",
+          "series": "Broad market",
+          "growth": 0.7585035625
+        },
+        {
+          "month": "2002-03",
+          "series": "Equal industry, net",
+          "growth": 0.9904135514
+        },
+        {
+          "month": "2002-03",
+          "series": "Broad market",
+          "growth": 0.7916501681
+        },
+        {
+          "month": "2002-04",
+          "series": "Equal industry, net",
+          "growth": 0.9517547451
+        },
+        {
+          "month": "2002-04",
+          "series": "Broad market",
+          "growth": 0.7515926696
+        },
+        {
+          "month": "2002-05",
+          "series": "Equal industry, net",
+          "growth": 0.9403684226
+        },
+        {
+          "month": "2002-05",
+          "series": "Broad market",
+          "growth": 0.7424232391
+        },
+        {
+          "month": "2002-06",
+          "series": "Equal industry, net",
+          "growth": 0.8752029359
+        },
+        {
+          "month": "2002-06",
+          "series": "Broad market",
+          "growth": 0.6897111891
+        },
+        {
+          "month": "2002-07",
+          "series": "Equal industry, net",
+          "growth": 0.793763366
+        },
+        {
+          "month": "2002-07",
+          "series": "Broad market",
+          "growth": 0.6342584095
+        },
+        {
+          "month": "2002-08",
+          "series": "Equal industry, net",
+          "growth": 0.8004637216
+        },
+        {
+          "month": "2002-08",
+          "series": "Broad market",
+          "growth": 0.6383176633
+        },
+        {
+          "month": "2002-09",
+          "series": "Equal industry, net",
+          "growth": 0.7219467487
+        },
+        {
+          "month": "2002-09",
+          "series": "Broad market",
+          "growth": 0.5732092617
+        },
+        {
+          "month": "2002-10",
+          "series": "Equal industry, net",
+          "growth": 0.7708419062
+        },
+        {
+          "month": "2002-10",
+          "series": "Broad market",
+          "growth": 0.6189513607
+        },
+        {
+          "month": "2002-11",
+          "series": "Equal industry, net",
+          "growth": 0.8168264015
+        },
+        {
+          "month": "2002-11",
+          "series": "Broad market",
+          "growth": 0.6565836035
+        },
+        {
+          "month": "2002-12",
+          "series": "Equal industry, net",
+          "growth": 0.7807141197
+        },
+        {
+          "month": "2002-12",
+          "series": "Broad market",
+          "growth": 0.6194866299
+        },
+        {
+          "month": "2003-01",
+          "series": "Equal industry, net",
+          "growth": 0.756896262
+        },
+        {
+          "month": "2003-01",
+          "series": "Broad market",
+          "growth": 0.6041853101
+        },
+        {
+          "month": "2003-02",
+          "series": "Equal industry, net",
+          "growth": 0.7393813232
+        },
+        {
+          "month": "2003-02",
+          "series": "Broad market",
+          "growth": 0.5933703931
+        },
+        {
+          "month": "2003-03",
+          "series": "Equal industry, net",
+          "growth": 0.7467536232
+        },
+        {
+          "month": "2003-03",
+          "series": "Broad market",
+          "growth": 0.6004315007
+        },
+        {
+          "month": "2003-04",
+          "series": "Equal industry, net",
+          "growth": 0.8048416507
+        },
+        {
+          "month": "2003-04",
+          "series": "Broad market",
+          "growth": 0.650147229
+        },
+        {
+          "month": "2003-05",
+          "series": "Equal industry, net",
+          "growth": 0.8568473229
+        },
+        {
+          "month": "2003-05",
+          "series": "Broad market",
+          "growth": 0.6900662689
+        },
+        {
+          "month": "2003-06",
+          "series": "Equal industry, net",
+          "growth": 0.8702540117
+        },
+        {
+          "month": "2003-06",
+          "series": "Broad market",
+          "growth": 0.7005552761
+        },
+        {
+          "month": "2003-07",
+          "series": "Equal industry, net",
+          "growth": 0.8817049526
+        },
+        {
+          "month": "2003-07",
+          "series": "Broad market",
+          "growth": 0.7173686028
+        },
+        {
+          "month": "2003-08",
+          "series": "Equal industry, net",
+          "growth": 0.9102141986
+        },
+        {
+          "month": "2003-08",
+          "series": "Broad market",
+          "growth": 0.7345854492
+        },
+        {
+          "month": "2003-09",
+          "series": "Equal industry, net",
+          "growth": 0.8960071708
+        },
+        {
+          "month": "2003-09",
+          "series": "Broad market",
+          "growth": 0.726064258
+        },
+        {
+          "month": "2003-10",
+          "series": "Equal industry, net",
+          "growth": 0.9467331658
+        },
+        {
+          "month": "2003-10",
+          "series": "Broad market",
+          "growth": 0.7707172099
+        },
+        {
+          "month": "2003-11",
+          "series": "Equal industry, net",
+          "growth": 0.9610052583
+        },
+        {
+          "month": "2003-11",
+          "series": "Broad market",
+          "growth": 0.7816613943
+        },
+        {
+          "month": "2003-12",
+          "series": "Equal industry, net",
+          "growth": 1.0177332434
+        },
+        {
+          "month": "2003-12",
+          "series": "Broad market",
+          "growth": 0.8158199972
+        },
+        {
+          "month": "2004-01",
+          "series": "Equal industry, net",
+          "growth": 1.0312782844
+        },
+        {
+          "month": "2004-01",
+          "series": "Broad market",
+          "growth": 0.8339312011
+        },
+        {
+          "month": "2004-02",
+          "series": "Equal industry, net",
+          "growth": 1.0505169275
+        },
+        {
+          "month": "2004-02",
+          "series": "Broad market",
+          "growth": 0.8461065967
+        },
+        {
+          "month": "2004-03",
+          "series": "Equal industry, net",
+          "growth": 1.040621825
+        },
+        {
+          "month": "2004-03",
+          "series": "Broad market",
+          "growth": 0.8356994855
+        },
+        {
+          "month": "2004-04",
+          "series": "Equal industry, net",
+          "growth": 1.0349482004
+        },
+        {
+          "month": "2004-04",
+          "series": "Broad market",
+          "growth": 0.8211583145
+        },
+        {
+          "month": "2004-05",
+          "series": "Equal industry, net",
+          "growth": 1.0384404946
+        },
+        {
+          "month": "2004-05",
+          "series": "Broad market",
+          "growth": 0.8313406776
+        },
+        {
+          "month": "2004-06",
+          "series": "Equal industry, net",
+          "growth": 1.0634596374
+        },
+        {
+          "month": "2004-06",
+          "series": "Broad market",
+          "growth": 0.8474686867
+        },
+        {
+          "month": "2004-07",
+          "series": "Equal industry, net",
+          "growth": 1.0293042382
+        },
+        {
+          "month": "2004-07",
+          "series": "Broad market",
+          "growth": 0.8140784205
+        },
+        {
+          "month": "2004-08",
+          "series": "Equal industry, net",
+          "growth": 1.0304789685
+        },
+        {
+          "month": "2004-08",
+          "series": "Broad market",
+          "growth": 0.8156251695
+        },
+        {
+          "month": "2004-09",
+          "series": "Equal industry, net",
+          "growth": 1.050563071
+        },
+        {
+          "month": "2004-09",
+          "series": "Broad market",
+          "growth": 0.8295723599
+        },
+        {
+          "month": "2004-10",
+          "series": "Equal industry, net",
+          "growth": 1.0646630349
+        },
+        {
+          "month": "2004-10",
+          "series": "Broad market",
+          "growth": 0.842264817
+        },
+        {
+          "month": "2004-11",
+          "series": "Equal industry, net",
+          "growth": 1.1167734225
+        },
+        {
+          "month": "2004-11",
+          "series": "Broad market",
+          "growth": 0.8816828104
+        },
+        {
+          "month": "2004-12",
+          "series": "Equal industry, net",
+          "growth": 1.1538120768
+        },
+        {
+          "month": "2004-12",
+          "series": "Broad market",
+          "growth": 0.9131588867
+        },
+        {
+          "month": "2005-01",
+          "series": "Equal industry, net",
+          "growth": 1.1288733639
+        },
+        {
+          "month": "2005-01",
+          "series": "Broad market",
+          "growth": 0.8895080716
+        },
+        {
+          "month": "2005-02",
+          "series": "Equal industry, net",
+          "growth": 1.1617716549
+        },
+        {
+          "month": "2005-02",
+          "series": "Broad market",
+          "growth": 0.9076540362
+        },
+        {
+          "month": "2005-03",
+          "series": "Equal industry, net",
+          "growth": 1.1405068868
+        },
+        {
+          "month": "2005-03",
+          "series": "Broad market",
+          "growth": 0.8920423868
+        },
+        {
+          "month": "2005-04",
+          "series": "Equal industry, net",
+          "growth": 1.1067275186
+        },
+        {
+          "month": "2005-04",
+          "series": "Broad market",
+          "growth": 0.8707225738
+        },
+        {
+          "month": "2005-05",
+          "series": "Equal industry, net",
+          "growth": 1.1494859831
+        },
+        {
+          "month": "2005-05",
+          "series": "Broad market",
+          "growth": 0.9045936819
+        },
+        {
+          "month": "2005-06",
+          "series": "Equal industry, net",
+          "growth": 1.1637360469
+        },
+        {
+          "month": "2005-06",
+          "series": "Broad market",
+          "growth": 0.9119208907
+        },
+        {
+          "month": "2005-07",
+          "series": "Equal industry, net",
+          "growth": 1.2149720497
+        },
+        {
+          "month": "2005-07",
+          "series": "Broad market",
+          "growth": 0.9498567998
+        },
+        {
+          "month": "2005-08",
+          "series": "Equal industry, net",
+          "growth": 1.2073621108
+        },
+        {
+          "month": "2005-08",
+          "series": "Broad market",
+          "growth": 0.9413080886
+        },
+        {
+          "month": "2005-09",
+          "series": "Equal industry, net",
+          "growth": 1.2136170064
+        },
+        {
+          "month": "2005-09",
+          "series": "Broad market",
+          "growth": 0.9485561609
+        },
+        {
+          "month": "2005-10",
+          "series": "Equal industry, net",
+          "growth": 1.1754819041
+        },
+        {
+          "month": "2005-10",
+          "series": "Broad market",
+          "growth": 0.9317667168
+        },
+        {
+          "month": "2005-11",
+          "series": "Equal industry, net",
+          "growth": 1.2093387842
+        },
+        {
+          "month": "2005-11",
+          "series": "Broad market",
+          "growth": 0.9682919721
+        },
+        {
+          "month": "2005-12",
+          "series": "Equal industry, net",
+          "growth": 1.2102365239
+        },
+        {
+          "month": "2005-12",
+          "series": "Broad market",
+          "growth": 0.9690666057
+        },
+        {
+          "month": "2006-01",
+          "series": "Equal industry, net",
+          "growth": 1.2590319517
+        },
+        {
+          "month": "2006-01",
+          "series": "Broad market",
+          "growth": 1.001821057
+        },
+        {
+          "month": "2006-02",
+          "series": "Equal industry, net",
+          "growth": 1.2585384593
+        },
+        {
+          "month": "2006-02",
+          "series": "Broad market",
+          "growth": 1.0022217854
+        },
+        {
+          "month": "2006-03",
+          "series": "Equal industry, net",
+          "growth": 1.2776819728
+        },
+        {
+          "month": "2006-03",
+          "series": "Broad market",
+          "growth": 1.0206626662
+        },
+        {
+          "month": "2006-04",
+          "series": "Equal industry, net",
+          "growth": 1.2914478358
+        },
+        {
+          "month": "2006-04",
+          "series": "Broad market",
+          "growth": 1.0317878893
+        },
+        {
+          "month": "2006-05",
+          "series": "Equal industry, net",
+          "growth": 1.2686062521
+        },
+        {
+          "month": "2006-05",
+          "series": "Broad market",
+          "growth": 0.9994929284
+        },
+        {
+          "month": "2006-06",
+          "series": "Equal industry, net",
+          "growth": 1.2789440278
+        },
+        {
+          "month": "2006-06",
+          "series": "Broad market",
+          "growth": 1.0000926241
+        },
+        {
+          "month": "2006-07",
+          "series": "Equal industry, net",
+          "growth": 1.2845159348
+        },
+        {
+          "month": "2006-07",
+          "series": "Broad market",
+          "growth": 0.9963922814
+        },
+        {
+          "month": "2006-08",
+          "series": "Equal industry, net",
+          "growth": 1.313358079
+        },
+        {
+          "month": "2006-08",
+          "series": "Broad market",
+          "growth": 1.0208038923
+        },
+        {
+          "month": "2006-09",
+          "series": "Equal industry, net",
+          "growth": 1.3359578094
+        },
+        {
+          "month": "2006-09",
+          "series": "Broad market",
+          "growth": 1.0437719799
+        },
+        {
+          "month": "2006-10",
+          "series": "Equal industry, net",
+          "growth": 1.3901116289
+        },
+        {
+          "month": "2006-10",
+          "series": "Broad market",
+          "growth": 1.0816609027
+        },
+        {
+          "month": "2006-11",
+          "series": "Equal industry, net",
+          "growth": 1.4214175662
+        },
+        {
+          "month": "2006-11",
+          "series": "Broad market",
+          "growth": 1.1045921139
+        },
+        {
+          "month": "2006-12",
+          "series": "Equal industry, net",
+          "growth": 1.4337154625
+        },
+        {
+          "month": "2006-12",
+          "series": "Broad market",
+          "growth": 1.1183995153
+        },
+        {
+          "month": "2007-01",
+          "series": "Equal industry, net",
+          "growth": 1.4619090916
+        },
+        {
+          "month": "2007-01",
+          "series": "Broad market",
+          "growth": 1.1387543865
+        },
+        {
+          "month": "2007-02",
+          "series": "Equal industry, net",
+          "growth": 1.4471410234
+        },
+        {
+          "month": "2007-02",
+          "series": "Broad market",
+          "growth": 1.1207620672
+        },
+        {
+          "month": "2007-03",
+          "series": "Equal industry, net",
+          "growth": 1.4715599673
+        },
+        {
+          "month": "2007-03",
+          "series": "Broad market",
+          "growth": 1.1335387547
+        },
+        {
+          "month": "2007-04",
+          "series": "Equal industry, net",
+          "growth": 1.5336932193
+        },
+        {
+          "month": "2007-04",
+          "series": "Broad market",
+          "growth": 1.1780868278
+        },
+        {
+          "month": "2007-05",
+          "series": "Equal industry, net",
+          "growth": 1.5905127836
+        },
+        {
+          "month": "2007-05",
+          "series": "Broad market",
+          "growth": 1.221086997
+        },
+        {
+          "month": "2007-06",
+          "series": "Equal industry, net",
+          "growth": 1.5694928132
+        },
+        {
+          "month": "2007-06",
+          "series": "Broad market",
+          "growth": 1.2020380399
+        },
+        {
+          "month": "2007-07",
+          "series": "Equal industry, net",
+          "growth": 1.5167171676
+        },
+        {
+          "month": "2007-07",
+          "series": "Broad market",
+          "growth": 1.1621303769
+        },
+        {
+          "month": "2007-08",
+          "series": "Equal industry, net",
+          "growth": 1.5316158178
+        },
+        {
+          "month": "2007-08",
+          "series": "Broad market",
+          "growth": 1.1779353501
+        },
+        {
+          "month": "2007-09",
+          "series": "Equal industry, net",
+          "growth": 1.5839945885
+        },
+        {
+          "month": "2007-09",
+          "series": "Broad market",
+          "growth": 1.2196342615
+        },
+        {
+          "month": "2007-10",
+          "series": "Equal industry, net",
+          "growth": 1.6170435846
+        },
+        {
+          "month": "2007-10",
+          "series": "Broad market",
+          "growth": 1.2453685444
+        },
+        {
+          "month": "2007-11",
+          "series": "Equal industry, net",
+          "growth": 1.553495775
+        },
+        {
+          "month": "2007-11",
+          "series": "Broad market",
+          "growth": 1.1898251073
+        },
+        {
+          "month": "2007-12",
+          "series": "Equal industry, net",
+          "growth": 1.549599877
+        },
+        {
+          "month": "2007-12",
+          "series": "Broad market",
+          "growth": 1.1826861567
+        },
+        {
+          "month": "2008-01",
+          "series": "Equal industry, net",
+          "growth": 1.4548686723
+        },
+        {
+          "month": "2008-01",
+          "series": "Broad market",
+          "growth": 1.1104240325
+        },
+        {
+          "month": "2008-02",
+          "series": "Equal industry, net",
+          "growth": 1.4222546398
+        },
+        {
+          "month": "2008-02",
+          "series": "Broad market",
+          "growth": 1.0775554811
+        },
+        {
+          "month": "2008-03",
+          "series": "Equal industry, net",
+          "growth": 1.4130645131
+        },
+        {
+          "month": "2008-03",
+          "series": "Broad market",
+          "growth": 1.0692583039
+        },
+        {
+          "month": "2008-04",
+          "series": "Equal industry, net",
+          "growth": 1.4801183495
+        },
+        {
+          "month": "2008-04",
+          "series": "Broad market",
+          "growth": 1.1204757767
+        },
+        {
+          "month": "2008-05",
+          "series": "Equal industry, net",
+          "growth": 1.5196630027
+        },
+        {
+          "month": "2008-05",
+          "series": "Broad market",
+          "growth": 1.1434455301
+        },
+        {
+          "month": "2008-06",
+          "series": "Equal industry, net",
+          "growth": 1.3992509158
+        },
+        {
+          "month": "2008-06",
+          "series": "Broad market",
+          "growth": 1.0489969293
+        },
+        {
+          "month": "2008-07",
+          "series": "Equal industry, net",
+          "growth": 1.3812972349
+        },
+        {
+          "month": "2008-07",
+          "series": "Broad market",
+          "growth": 1.0427029477
+        },
+        {
+          "month": "2008-08",
+          "series": "Equal industry, net",
+          "growth": 1.4068299224
+        },
+        {
+          "month": "2008-08",
+          "series": "Broad market",
+          "growth": 1.0600118167
+        },
+        {
+          "month": "2008-09",
+          "series": "Equal industry, net",
+          "growth": 1.2766543976
+        },
+        {
+          "month": "2008-09",
+          "series": "Broad market",
+          "growth": 0.9624907295
+        },
+        {
+          "month": "2008-10",
+          "series": "Equal industry, net",
+          "growth": 1.0528701468
+        },
+        {
+          "month": "2008-10",
+          "series": "Broad market",
+          "growth": 0.7977123166
+        },
+        {
+          "month": "2008-11",
+          "series": "Equal industry, net",
+          "growth": 0.9884023231
+        },
+        {
+          "month": "2008-11",
+          "series": "Broad market",
+          "growth": 0.736208697
+        },
+        {
+          "month": "2008-12",
+          "series": "Equal industry, net",
+          "growth": 1.0042136753
+        },
+        {
+          "month": "2008-12",
+          "series": "Broad market",
+          "growth": 0.749239591
+        },
+        {
+          "month": "2009-01",
+          "series": "Equal industry, net",
+          "growth": 0.9315690386
+        },
+        {
+          "month": "2009-01",
+          "series": "Broad market",
+          "growth": 0.6886261081
+        },
+        {
+          "month": "2009-02",
+          "series": "Equal industry, net",
+          "growth": 0.8394448168
+        },
+        {
+          "month": "2009-02",
+          "series": "Broad market",
+          "growth": 0.6188682833
+        },
+        {
+          "month": "2009-03",
+          "series": "Equal industry, net",
+          "growth": 0.9090176864
+        },
+        {
+          "month": "2009-03",
+          "series": "Broad market",
+          "growth": 0.6747520893
+        },
+        {
+          "month": "2009-04",
+          "series": "Equal industry, net",
+          "growth": 1.0178379696
+        },
+        {
+          "month": "2009-04",
+          "series": "Broad market",
+          "growth": 0.743441852
+        },
+        {
+          "month": "2009-05",
+          "series": "Equal industry, net",
+          "growth": 1.0596018054
+        },
+        {
+          "month": "2009-05",
+          "series": "Broad market",
+          "growth": 0.7821008283
+        },
+        {
+          "month": "2009-06",
+          "series": "Equal industry, net",
+          "growth": 1.0708843996
+        },
+        {
+          "month": "2009-06",
+          "series": "Broad market",
+          "growth": 0.7854638618
+        },
+        {
+          "month": "2009-07",
+          "series": "Equal industry, net",
+          "growth": 1.1600366845
+        },
+        {
+          "month": "2009-07",
+          "series": "Broad market",
+          "growth": 0.8463373111
+        },
+        {
+          "month": "2009-08",
+          "series": "Equal industry, net",
+          "growth": 1.1877048625
+        },
+        {
+          "month": "2009-08",
+          "series": "Broad market",
+          "growth": 0.8746049773
+        },
+        {
+          "month": "2009-09",
+          "series": "Equal industry, net",
+          "growth": 1.234755859
+        },
+        {
+          "month": "2009-09",
+          "series": "Broad market",
+          "growth": 0.9103763209
+        },
+        {
+          "month": "2009-10",
+          "series": "Equal industry, net",
+          "growth": 1.2116601487
+        },
+        {
+          "month": "2009-10",
+          "series": "Broad market",
+          "growth": 0.8871617247
+        },
+        {
+          "month": "2009-11",
+          "series": "Equal industry, net",
+          "growth": 1.2847478022
+        },
+        {
+          "month": "2009-11",
+          "series": "Broad market",
+          "growth": 0.936665349
+        },
+        {
+          "month": "2009-12",
+          "series": "Equal industry, net",
+          "growth": 1.3286770855
+        },
+        {
+          "month": "2009-12",
+          "series": "Broad market",
+          "growth": 0.9624236461
+        },
+        {
+          "month": "2010-01",
+          "series": "Equal industry, net",
+          "growth": 1.2856556451
+        },
+        {
+          "month": "2010-01",
+          "series": "Broad market",
+          "growth": 0.9301824539
+        },
+        {
+          "month": "2010-02",
+          "series": "Equal industry, net",
+          "growth": 1.3283863219
+        },
+        {
+          "month": "2010-02",
+          "series": "Broad market",
+          "growth": 0.9617156391
+        },
+        {
+          "month": "2010-03",
+          "series": "Equal industry, net",
+          "growth": 1.4084511237
+        },
+        {
+          "month": "2010-03",
+          "series": "Broad market",
+          "growth": 1.0223998959
+        },
+        {
+          "month": "2010-04",
+          "series": "Equal industry, net",
+          "growth": 1.4424987926
+        },
+        {
+          "month": "2010-04",
+          "series": "Broad market",
+          "growth": 1.0429501338
+        },
+        {
+          "month": "2010-05",
+          "series": "Equal industry, net",
+          "growth": 1.3334085552
+        },
+        {
+          "month": "2010-05",
+          "series": "Broad market",
+          "growth": 0.9606613683
+        },
+        {
+          "month": "2010-06",
+          "series": "Equal industry, net",
+          "growth": 1.2632255908
+        },
+        {
+          "month": "2010-06",
+          "series": "Broad market",
+          "growth": 0.9072485962
+        },
+        {
+          "month": "2010-07",
+          "series": "Equal industry, net",
+          "growth": 1.3610000027
+        },
+        {
+          "month": "2010-07",
+          "series": "Broad market",
+          "growth": 0.9701209239
+        },
+        {
+          "month": "2010-08",
+          "series": "Equal industry, net",
+          "growth": 1.3055929177
+        },
+        {
+          "month": "2010-08",
+          "series": "Broad market",
+          "growth": 0.9239431679
+        },
+        {
+          "month": "2010-09",
+          "series": "Equal industry, net",
+          "growth": 1.4261011342
+        },
+        {
+          "month": "2010-09",
+          "series": "Broad market",
+          "growth": 1.0122721348
+        },
+        {
+          "month": "2010-10",
+          "series": "Equal industry, net",
+          "growth": 1.4858248242
+        },
+        {
+          "month": "2010-10",
+          "series": "Broad market",
+          "growth": 1.0515482936
+        },
+        {
+          "month": "2010-11",
+          "series": "Equal industry, net",
+          "growth": 1.503020952
+        },
+        {
+          "month": "2010-11",
+          "series": "Broad market",
+          "growth": 1.0578575834
+        },
+        {
+          "month": "2010-12",
+          "series": "Equal industry, net",
+          "growth": 1.5981785229
+        },
+        {
+          "month": "2010-12",
+          "series": "Broad market",
+          "growth": 1.1301092563
+        },
+        {
+          "month": "2011-01",
+          "series": "Equal industry, net",
+          "growth": 1.6205242183
+        },
+        {
+          "month": "2011-01",
+          "series": "Broad market",
+          "growth": 1.1525984305
+        },
+        {
+          "month": "2011-02",
+          "series": "Equal industry, net",
+          "growth": 1.6762334197
+        },
+        {
+          "month": "2011-02",
+          "series": "Broad market",
+          "growth": 1.1928241158
+        },
+        {
+          "month": "2011-03",
+          "series": "Equal industry, net",
+          "growth": 1.6967866284
+        },
+        {
+          "month": "2011-03",
+          "series": "Broad market",
+          "growth": 1.1984303891
+        },
+        {
+          "month": "2011-04",
+          "series": "Equal industry, net",
+          "growth": 1.7545943205
+        },
+        {
+          "month": "2011-04",
+          "series": "Broad market",
+          "growth": 1.2331848704
+        },
+        {
+          "month": "2011-05",
+          "series": "Equal industry, net",
+          "growth": 1.741134805
+        },
+        {
+          "month": "2011-05",
+          "series": "Broad market",
+          "growth": 1.2175234225
+        },
+        {
+          "month": "2011-06",
+          "series": "Equal industry, net",
+          "growth": 1.7165299251
+        },
+        {
+          "month": "2011-06",
+          "series": "Broad market",
+          "growth": 1.196338515
+        },
+        {
+          "month": "2011-07",
+          "series": "Equal industry, net",
+          "growth": 1.6692118427
+        },
+        {
+          "month": "2011-07",
+          "series": "Broad market",
+          "growth": 1.1682245599
+        },
+        {
+          "month": "2011-08",
+          "series": "Equal industry, net",
+          "growth": 1.5777991093
+        },
+        {
+          "month": "2011-08",
+          "series": "Broad market",
+          "growth": 1.0987151986
+        },
+        {
+          "month": "2011-09",
+          "series": "Equal industry, net",
+          "growth": 1.4625233609
+        },
+        {
+          "month": "2011-09",
+          "series": "Broad market",
+          "growth": 1.015542458
+        },
+        {
+          "month": "2011-10",
+          "series": "Equal industry, net",
+          "growth": 1.6302811599
+        },
+        {
+          "month": "2011-10",
+          "series": "Broad market",
+          "growth": 1.1307049728
+        },
+        {
+          "month": "2011-11",
+          "series": "Equal industry, net",
+          "growth": 1.6236159045
+        },
+        {
+          "month": "2011-11",
+          "series": "Broad market",
+          "growth": 1.1276520693
+        },
+        {
+          "month": "2011-12",
+          "series": "Equal industry, net",
+          "growth": 1.6400740155
+        },
+        {
+          "month": "2011-12",
+          "series": "Broad market",
+          "growth": 1.1361094599
+        },
+        {
+          "month": "2012-01",
+          "series": "Equal industry, net",
+          "growth": 1.7133425314
+        },
+        {
+          "month": "2012-01",
+          "series": "Broad market",
+          "growth": 1.1934829876
+        },
+        {
+          "month": "2012-02",
+          "series": "Equal industry, net",
+          "growth": 1.7850006343
+        },
+        {
+          "month": "2012-02",
+          "series": "Broad market",
+          "growth": 1.245996239
+        },
+        {
+          "month": "2012-03",
+          "series": "Equal industry, net",
+          "growth": 1.8290104774
+        },
+        {
+          "month": "2012-03",
+          "series": "Broad market",
+          "growth": 1.2847467221
+        },
+        {
+          "month": "2012-04",
+          "series": "Equal industry, net",
+          "growth": 1.8149840596
+        },
+        {
+          "month": "2012-04",
+          "series": "Broad market",
+          "growth": 1.2739548496
+        },
+        {
+          "month": "2012-05",
+          "series": "Equal industry, net",
+          "growth": 1.7200089987
+        },
+        {
+          "month": "2012-05",
+          "series": "Broad market",
+          "growth": 1.1954792309
+        },
+        {
+          "month": "2012-06",
+          "series": "Equal industry, net",
+          "growth": 1.775438167
+        },
+        {
+          "month": "2012-06",
+          "series": "Broad market",
+          "growth": 1.2421029209
+        },
+        {
+          "month": "2012-07",
+          "series": "Equal industry, net",
+          "growth": 1.8001989943
+        },
+        {
+          "month": "2012-07",
+          "series": "Broad market",
+          "growth": 1.251915534
+        },
+        {
+          "month": "2012-08",
+          "series": "Equal industry, net",
+          "growth": 1.8346492287
+        },
+        {
+          "month": "2012-08",
+          "series": "Broad market",
+          "growth": 1.2838393801
+        },
+        {
+          "month": "2012-09",
+          "series": "Equal industry, net",
+          "growth": 1.8868297982
+        },
+        {
+          "month": "2012-09",
+          "series": "Broad market",
+          "growth": 1.3190165791
+        },
+        {
+          "month": "2012-10",
+          "series": "Equal industry, net",
+          "growth": 1.8725988456
+        },
+        {
+          "month": "2012-10",
+          "series": "Broad market",
+          "growth": 1.295933789
+        },
+        {
+          "month": "2012-11",
+          "series": "Equal industry, net",
+          "growth": 1.8863590642
+        },
+        {
+          "month": "2012-11",
+          "series": "Broad market",
+          "growth": 1.3061716659
+        },
+        {
+          "month": "2012-12",
+          "series": "Equal industry, net",
+          "growth": 1.911019072
+        },
+        {
+          "month": "2012-12",
+          "series": "Broad market",
+          "growth": 1.3217151087
+        },
+        {
+          "month": "2013-01",
+          "series": "Equal industry, net",
+          "growth": 2.0154350925
+        },
+        {
+          "month": "2013-01",
+          "series": "Broad market",
+          "growth": 1.3953346403
+        },
+        {
+          "month": "2013-02",
+          "series": "Equal industry, net",
+          "growth": 2.0418925081
+        },
+        {
+          "month": "2013-02",
+          "series": "Broad market",
+          "growth": 1.4133344571
+        },
+        {
+          "month": "2013-03",
+          "series": "Equal industry, net",
+          "growth": 2.1310050462
+        },
+        {
+          "month": "2013-03",
+          "series": "Broad market",
+          "growth": 1.4702918357
+        },
+        {
+          "month": "2013-04",
+          "series": "Equal industry, net",
+          "growth": 2.1799722459
+        },
+        {
+          "month": "2013-04",
+          "series": "Broad market",
+          "growth": 1.4932283884
+        },
+        {
+          "month": "2013-05",
+          "series": "Equal industry, net",
+          "growth": 2.2228801243
+        },
+        {
+          "month": "2013-05",
+          "series": "Broad market",
+          "growth": 1.5351881061
+        },
+        {
+          "month": "2013-06",
+          "series": "Equal industry, net",
+          "growth": 2.206155199
+        },
+        {
+          "month": "2013-06",
+          "series": "Broad market",
+          "growth": 1.5167658488
+        },
+        {
+          "month": "2013-07",
+          "series": "Equal industry, net",
+          "growth": 2.3310388883
+        },
+        {
+          "month": "2013-07",
+          "series": "Broad market",
+          "growth": 1.6024631193
+        },
+        {
+          "month": "2013-08",
+          "series": "Equal industry, net",
+          "growth": 2.2652986878
+        },
+        {
+          "month": "2013-08",
+          "series": "Broad market",
+          "growth": 1.5590363688
+        },
+        {
+          "month": "2013-09",
+          "series": "Equal industry, net",
+          "growth": 2.3496051681
+        },
+        {
+          "month": "2013-09",
+          "series": "Broad market",
+          "growth": 1.6178120399
+        },
+        {
+          "month": "2013-10",
+          "series": "Equal industry, net",
+          "growth": 2.4445472246
+        },
+        {
+          "month": "2013-10",
+          "series": "Broad market",
+          "growth": 1.6852748019
+        },
+        {
+          "month": "2013-11",
+          "series": "Equal industry, net",
+          "growth": 2.4976678188
+        },
+        {
+          "month": "2013-11",
+          "series": "Broad market",
+          "growth": 1.7378553757
+        },
+        {
+          "month": "2013-12",
+          "series": "Equal industry, net",
+          "growth": 2.5565198888
+        },
+        {
+          "month": "2013-12",
+          "series": "Broad market",
+          "growth": 1.7865153263
+        },
+        {
+          "month": "2014-01",
+          "series": "Equal industry, net",
+          "growth": 2.4740452348
+        },
+        {
+          "month": "2014-01",
+          "series": "Broad market",
+          "growth": 1.7275603205
+        },
+        {
+          "month": "2014-02",
+          "series": "Equal industry, net",
+          "growth": 2.5939938616
+        },
+        {
+          "month": "2014-02",
+          "series": "Broad market",
+          "growth": 1.8084101435
+        },
+        {
+          "month": "2014-03",
+          "series": "Equal industry, net",
+          "growth": 2.6096793953
+        },
+        {
+          "month": "2014-03",
+          "series": "Broad market",
+          "growth": 1.8158246251
+        },
+        {
+          "month": "2014-04",
+          "series": "Equal industry, net",
+          "growth": 2.6316633613
+        },
+        {
+          "month": "2014-04",
+          "series": "Broad market",
+          "growth": 1.8123745583
+        },
+        {
+          "month": "2014-05",
+          "series": "Equal industry, net",
+          "growth": 2.6799612644
+        },
+        {
+          "month": "2014-05",
+          "series": "Broad market",
+          "growth": 1.8493469993
+        },
+        {
+          "month": "2014-06",
+          "series": "Equal industry, net",
+          "growth": 2.7538453799
+        },
+        {
+          "month": "2014-06",
+          "series": "Broad market",
+          "growth": 1.897614956
+        },
+        {
+          "month": "2014-07",
+          "series": "Equal industry, net",
+          "growth": 2.6799562631
+        },
+        {
+          "month": "2014-07",
+          "series": "Broad market",
+          "growth": 1.8590933724
+        },
+        {
+          "month": "2014-08",
+          "series": "Equal industry, net",
+          "growth": 2.7933160977
+        },
+        {
+          "month": "2014-08",
+          "series": "Broad market",
+          "growth": 1.9379189313
+        },
+        {
+          "month": "2014-09",
+          "series": "Equal industry, net",
+          "growth": 2.7132008215
+        },
+        {
+          "month": "2014-09",
+          "series": "Broad market",
+          "growth": 1.8999357203
+        },
+        {
+          "month": "2014-10",
+          "series": "Equal industry, net",
+          "growth": 2.7837567181
+        },
+        {
+          "month": "2014-10",
+          "series": "Broad market",
+          "growth": 1.9476241069
+        },
+        {
+          "month": "2014-11",
+          "series": "Equal industry, net",
+          "growth": 2.8434445235
+        },
+        {
+          "month": "2014-11",
+          "series": "Broad market",
+          "growth": 1.997483284
+        },
+        {
+          "month": "2014-12",
+          "series": "Equal industry, net",
+          "growth": 2.8402410899
+        },
+        {
+          "month": "2014-12",
+          "series": "Broad market",
+          "growth": 1.9964845424
+        },
+        {
+          "month": "2015-01",
+          "series": "Equal industry, net",
+          "growth": 2.7697408245
+        },
+        {
+          "month": "2015-01",
+          "series": "Broad market",
+          "growth": 1.93479317
+        },
+        {
+          "month": "2015-02",
+          "series": "Equal industry, net",
+          "growth": 2.918433071
+        },
+        {
+          "month": "2015-02",
+          "series": "Broad market",
+          "growth": 2.0535894706
+        },
+        {
+          "month": "2015-03",
+          "series": "Equal industry, net",
+          "growth": 2.8846011301
+        },
+        {
+          "month": "2015-03",
+          "series": "Broad market",
+          "growth": 2.0312053454
+        },
+        {
+          "month": "2015-04",
+          "series": "Equal industry, net",
+          "growth": 2.9085668474
+        },
+        {
+          "month": "2015-04",
+          "series": "Broad market",
+          "growth": 2.0433925775
+        },
+        {
+          "month": "2015-05",
+          "series": "Equal industry, net",
+          "growth": 2.9314036352
+        },
+        {
+          "month": "2015-05",
+          "series": "Broad market",
+          "growth": 2.0715913951
+        },
+        {
+          "month": "2015-06",
+          "series": "Equal industry, net",
+          "growth": 2.8764259157
+        },
+        {
+          "month": "2015-06",
+          "series": "Broad market",
+          "growth": 2.0396888876
+        },
+        {
+          "month": "2015-07",
+          "series": "Equal industry, net",
+          "growth": 2.9009198247
+        },
+        {
+          "month": "2015-07",
+          "series": "Broad market",
+          "growth": 2.0717120031
+        },
+        {
+          "month": "2015-08",
+          "series": "Equal industry, net",
+          "growth": 2.7340891268
+        },
+        {
+          "month": "2015-08",
+          "series": "Broad market",
+          "growth": 1.9469949405
+        },
+        {
+          "month": "2015-09",
+          "series": "Equal industry, net",
+          "growth": 2.6510484278
+        },
+        {
+          "month": "2015-09",
+          "series": "Broad market",
+          "growth": 1.8874168953
+        },
+        {
+          "month": "2015-10",
+          "series": "Equal industry, net",
+          "growth": 2.8512071451
+        },
+        {
+          "month": "2015-10",
+          "series": "Broad market",
+          "growth": 2.0336917047
+        },
+        {
+          "month": "2015-11",
+          "series": "Equal industry, net",
+          "growth": 2.8550857339
+        },
+        {
+          "month": "2015-11",
+          "series": "Broad market",
+          "growth": 2.0452837474
+        },
+        {
+          "month": "2015-12",
+          "series": "Equal industry, net",
+          "growth": 2.7819013552
+        },
+        {
+          "month": "2015-12",
+          "series": "Broad market",
+          "growth": 2.0015146752
+        },
+        {
+          "month": "2016-01",
+          "series": "Equal industry, net",
+          "growth": 2.6524379665
+        },
+        {
+          "month": "2016-01",
+          "series": "Broad market",
+          "growth": 1.8868278844
+        },
+        {
+          "month": "2016-02",
+          "series": "Equal industry, net",
+          "growth": 2.666916783
+        },
+        {
+          "month": "2016-02",
+          "series": "Broad market",
+          "growth": 1.8858844704
+        },
+        {
+          "month": "2016-03",
+          "series": "Equal industry, net",
+          "growth": 2.8603835448
+        },
+        {
+          "month": "2016-03",
+          "series": "Broad market",
+          "growth": 2.017330618
+        },
+        {
+          "month": "2016-04",
+          "series": "Equal industry, net",
+          "growth": 2.9054724702
+        },
+        {
+          "month": "2016-04",
+          "series": "Broad market",
+          "growth": 2.0358900597
+        },
+        {
+          "month": "2016-05",
+          "series": "Equal industry, net",
+          "growth": 2.936372432
+        },
+        {
+          "month": "2016-05",
+          "series": "Broad market",
+          "growth": 2.0723324918
+        },
+        {
+          "month": "2016-06",
+          "series": "Equal industry, net",
+          "growth": 2.96408164
+        },
+        {
+          "month": "2016-06",
+          "series": "Broad market",
+          "growth": 2.0721252585
+        },
+        {
+          "month": "2016-07",
+          "series": "Equal industry, net",
+          "growth": 3.0621344707
+        },
+        {
+          "month": "2016-07",
+          "series": "Broad market",
+          "growth": 2.1541814187
+        },
+        {
+          "month": "2016-08",
+          "series": "Equal industry, net",
+          "growth": 3.0506297669
+        },
+        {
+          "month": "2016-08",
+          "series": "Broad market",
+          "growth": 2.165167744
+        },
+        {
+          "month": "2016-09",
+          "series": "Equal industry, net",
+          "growth": 3.0574310468
+        },
+        {
+          "month": "2016-09",
+          "series": "Broad market",
+          "growth": 2.1714467304
+        },
+        {
+          "month": "2016-10",
+          "series": "Equal industry, net",
+          "growth": 2.9804350342
+        },
+        {
+          "month": "2016-10",
+          "series": "Broad market",
+          "growth": 2.1282349405
+        },
+        {
+          "month": "2016-11",
+          "series": "Equal industry, net",
+          "growth": 3.1066296756
+        },
+        {
+          "month": "2016-11",
+          "series": "Broad market",
+          "growth": 2.2316671586
+        },
+        {
+          "month": "2016-12",
+          "series": "Equal industry, net",
+          "growth": 3.1769330165
+        },
+        {
+          "month": "2016-12",
+          "series": "Broad market",
+          "growth": 2.2727298343
+        },
+        {
+          "month": "2017-01",
+          "series": "Equal industry, net",
+          "growth": 3.2301306246
+        },
+        {
+          "month": "2017-01",
+          "series": "Broad market",
+          "growth": 2.317729885
+        },
+        {
+          "month": "2017-02",
+          "series": "Equal industry, net",
+          "growth": 3.3215565428
+        },
+        {
+          "month": "2017-02",
+          "series": "Broad market",
+          "growth": 2.4009363879
+        },
+        {
+          "month": "2017-03",
+          "series": "Equal industry, net",
+          "growth": 3.3302251591
+        },
+        {
+          "month": "2017-03",
+          "series": "Broad market",
+          "growth": 2.4057382607
+        },
+        {
+          "month": "2017-04",
+          "series": "Equal industry, net",
+          "growth": 3.3578077755
+        },
+        {
+          "month": "2017-04",
+          "series": "Broad market",
+          "growth": 2.432923103
+        },
+        {
+          "month": "2017-05",
+          "series": "Equal industry, net",
+          "growth": 3.3812416617
+        },
+        {
+          "month": "2017-05",
+          "series": "Broad market",
+          "growth": 2.4604151341
+        },
+        {
+          "month": "2017-06",
+          "series": "Equal industry, net",
+          "growth": 3.3979166179
+        },
+        {
+          "month": "2017-06",
+          "series": "Broad market",
+          "growth": 2.4810826212
+        },
+        {
+          "month": "2017-07",
+          "series": "Equal industry, net",
+          "growth": 3.4569882763
+        },
+        {
+          "month": "2017-07",
+          "series": "Broad market",
+          "growth": 2.5294637323
+        },
+        {
+          "month": "2017-08",
+          "series": "Equal industry, net",
+          "growth": 3.4451840944
+        },
+        {
+          "month": "2017-08",
+          "series": "Broad market",
+          "growth": 2.5362932844
+        },
+        {
+          "month": "2017-09",
+          "series": "Equal industry, net",
+          "growth": 3.5353092714
+        },
+        {
+          "month": "2017-09",
+          "series": "Broad market",
+          "growth": 2.6017296512
+        },
+        {
+          "month": "2017-10",
+          "series": "Equal industry, net",
+          "growth": 3.5762540638
+        },
+        {
+          "month": "2017-10",
+          "series": "Broad market",
+          "growth": 2.662610125
+        },
+        {
+          "month": "2017-11",
+          "series": "Equal industry, net",
+          "growth": 3.6895343373
+        },
+        {
+          "month": "2017-11",
+          "series": "Broad market",
+          "growth": 2.747813649
+        },
+        {
+          "month": "2017-12",
+          "series": "Equal industry, net",
+          "growth": 3.732427046
+        },
+        {
+          "month": "2017-12",
+          "series": "Broad market",
+          "growth": 2.779413506
+        },
+        {
+          "month": "2018-01",
+          "series": "Equal industry, net",
+          "growth": 3.886494098
+        },
+        {
+          "month": "2018-01",
+          "series": "Broad market",
+          "growth": 2.9375621345
+        },
+        {
+          "month": "2018-02",
+          "series": "Equal industry, net",
+          "growth": 3.6922333692
+        },
+        {
+          "month": "2018-02",
+          "series": "Broad market",
+          "growth": 2.8338661911
+        },
+        {
+          "month": "2018-03",
+          "series": "Equal industry, net",
+          "growth": 3.633338791
+        },
+        {
+          "month": "2018-03",
+          "series": "Broad market",
+          "growth": 2.770670975
+        },
+        {
+          "month": "2018-04",
+          "series": "Equal industry, net",
+          "growth": 3.658298597
+        },
+        {
+          "month": "2018-04",
+          "series": "Broad market",
+          "growth": 2.7825848602
+        },
+        {
+          "month": "2018-05",
+          "series": "Equal industry, net",
+          "growth": 3.7271873267
+        },
+        {
+          "month": "2018-05",
+          "series": "Broad market",
+          "growth": 2.8596624609
+        },
+        {
+          "month": "2018-06",
+          "series": "Equal industry, net",
+          "growth": 3.788956284
+        },
+        {
+          "month": "2018-06",
+          "series": "Broad market",
+          "growth": 2.8776783344
+        },
+        {
+          "month": "2018-07",
+          "series": "Equal industry, net",
+          "growth": 3.8939496999
+        },
+        {
+          "month": "2018-07",
+          "series": "Broad market",
+          "growth": 2.9743683264
+        },
+        {
+          "month": "2018-08",
+          "series": "Equal industry, net",
+          "growth": 3.9754741386
+        },
+        {
+          "month": "2018-08",
+          "series": "Broad market",
+          "growth": 3.0820404598
+        },
+        {
+          "month": "2018-09",
+          "series": "Equal industry, net",
+          "growth": 3.9910244906
+        },
+        {
+          "month": "2018-09",
+          "series": "Broad market",
+          "growth": 3.0885127448
+        },
+        {
+          "month": "2018-10",
+          "series": "Equal industry, net",
+          "growth": 3.7580130948
+        },
+        {
+          "month": "2018-10",
+          "series": "Broad market",
+          "growth": 2.8584185453
+        },
+        {
+          "month": "2018-11",
+          "series": "Equal industry, net",
+          "growth": 3.8491720095
+        },
+        {
+          "month": "2018-11",
+          "series": "Broad market",
+          "growth": 2.9124426558
+        },
+        {
+          "month": "2018-12",
+          "series": "Equal industry, net",
+          "growth": 3.485699671
+        },
+        {
+          "month": "2018-12",
+          "series": "Broad market",
+          "growth": 2.6398380232
+        },
+        {
+          "month": "2019-01",
+          "series": "Equal industry, net",
+          "growth": 3.7708246156
+        },
+        {
+          "month": "2019-01",
+          "series": "Broad market",
+          "growth": 2.8660721418
+        },
+        {
+          "month": "2019-02",
+          "series": "Equal industry, net",
+          "growth": 3.8921028471
+        },
+        {
+          "month": "2019-02",
+          "series": "Broad market",
+          "growth": 2.9692507389
+        },
+        {
+          "month": "2019-03",
+          "series": "Equal industry, net",
+          "growth": 3.9311387313
+        },
+        {
+          "month": "2019-03",
+          "series": "Broad market",
+          "growth": 3.0075540734
+        },
+        {
+          "month": "2019-04",
+          "series": "Equal industry, net",
+          "growth": 4.0557449058
+        },
+        {
+          "month": "2019-04",
+          "series": "Broad market",
+          "growth": 3.1332698337
+        },
+        {
+          "month": "2019-05",
+          "series": "Equal industry, net",
+          "growth": 3.7816139323
+        },
+        {
+          "month": "2019-05",
+          "series": "Broad market",
+          "growth": 2.9230274279
+        },
+        {
+          "month": "2019-06",
+          "series": "Equal industry, net",
+          "growth": 4.0592067784
+        },
+        {
+          "month": "2019-06",
+          "series": "Broad market",
+          "growth": 3.1326084945
+        },
+        {
+          "month": "2019-07",
+          "series": "Equal industry, net",
+          "growth": 4.0837717181
+        },
+        {
+          "month": "2019-07",
+          "series": "Broad market",
+          "growth": 3.1767782742
+        },
+        {
+          "month": "2019-08",
+          "series": "Equal industry, net",
+          "growth": 4.0008512964
+        },
+        {
+          "month": "2019-08",
+          "series": "Broad market",
+          "growth": 3.1008532735
+        },
+        {
+          "month": "2019-09",
+          "series": "Equal industry, net",
+          "growth": 4.0865269852
+        },
+        {
+          "month": "2019-09",
+          "series": "Broad market",
+          "growth": 3.1504669258
+        },
+        {
+          "month": "2019-10",
+          "series": "Equal industry, net",
+          "growth": 4.1583137888
+        },
+        {
+          "month": "2019-10",
+          "series": "Broad market",
+          "growth": 3.2204072916
+        },
+        {
+          "month": "2019-11",
+          "series": "Equal industry, net",
+          "growth": 4.2738187303
+        },
+        {
+          "month": "2019-11",
+          "series": "Broad market",
+          "growth": 3.3489015425
+        },
+        {
+          "month": "2019-12",
+          "series": "Equal industry, net",
+          "growth": 4.4131613944
+        },
+        {
+          "month": "2019-12",
+          "series": "Broad market",
+          "growth": 3.4460196873
+        },
+        {
+          "month": "2020-01",
+          "series": "Equal industry, net",
+          "growth": 4.3902861839
+        },
+        {
+          "month": "2020-01",
+          "series": "Broad market",
+          "growth": 3.4473980951
+        },
+        {
+          "month": "2020-02",
+          "series": "Equal industry, net",
+          "growth": 4.0164878161
+        },
+        {
+          "month": "2020-02",
+          "series": "Broad market",
+          "growth": 3.1705720281
+        },
+        {
+          "month": "2020-03",
+          "series": "Equal industry, net",
+          "growth": 3.4011678222
+        },
+        {
+          "month": "2020-03",
+          "series": "Broad market",
+          "growth": 2.7511053488
+        },
+        {
+          "month": "2020-04",
+          "series": "Equal industry, net",
+          "growth": 3.9071703687
+        },
+        {
+          "month": "2020-04",
+          "series": "Broad market",
+          "growth": 3.1247054552
+        },
+        {
+          "month": "2020-05",
+          "series": "Equal industry, net",
+          "growth": 4.0902710902
+        },
+        {
+          "month": "2020-05",
+          "series": "Broad market",
+          "growth": 3.2996889606
+        },
+        {
+          "month": "2020-06",
+          "series": "Equal industry, net",
+          "growth": 4.1629025442
+        },
+        {
+          "month": "2020-06",
+          "series": "Broad market",
+          "growth": 3.3805313402
+        },
+        {
+          "month": "2020-07",
+          "series": "Equal industry, net",
+          "growth": 4.4134210516
+        },
+        {
+          "month": "2020-07",
+          "series": "Broad market",
+          "growth": 3.5779543704
+        },
+        {
+          "month": "2020-08",
+          "series": "Equal industry, net",
+          "growth": 4.7736217019
+        },
+        {
+          "month": "2020-08",
+          "series": "Broad market",
+          "growth": 3.8509522889
+        },
+        {
+          "month": "2020-09",
+          "series": "Equal industry, net",
+          "growth": 4.5727358022
+        },
+        {
+          "month": "2020-09",
+          "series": "Broad market",
+          "growth": 3.7111627208
+        },
+        {
+          "month": "2020-10",
+          "series": "Equal industry, net",
+          "growth": 4.4759581713
+        },
+        {
+          "month": "2020-10",
+          "series": "Broad market",
+          "growth": 3.6343416525
+        },
+        {
+          "month": "2020-11",
+          "series": "Equal industry, net",
+          "growth": 5.1395173187
+        },
+        {
+          "month": "2020-11",
+          "series": "Broad market",
+          "growth": 4.0868171882
+        },
+        {
+          "month": "2020-12",
+          "series": "Equal industry, net",
+          "growth": 5.401776958
+        },
+        {
+          "month": "2020-12",
+          "series": "Broad market",
+          "growth": 4.2764455058
+        },
+        {
+          "month": "2021-01",
+          "series": "Equal industry, net",
+          "growth": 5.4409294985
+        },
+        {
+          "month": "2021-01",
+          "series": "Broad market",
+          "growth": 4.2734519939
+        },
+        {
+          "month": "2021-02",
+          "series": "Equal industry, net",
+          "growth": 5.6055918816
+        },
+        {
+          "month": "2021-02",
+          "series": "Broad market",
+          "growth": 4.3935359949
+        },
+        {
+          "month": "2021-03",
+          "series": "Equal industry, net",
+          "growth": 5.8402819724
+        },
+        {
+          "month": "2021-03",
+          "series": "Broad market",
+          "growth": 4.5323717324
+        },
+        {
+          "month": "2021-04",
+          "series": "Equal industry, net",
+          "growth": 6.0741808543
+        },
+        {
+          "month": "2021-04",
+          "series": "Broad market",
+          "growth": 4.7576306075
+        },
+        {
+          "month": "2021-05",
+          "series": "Equal industry, net",
+          "growth": 6.0956560727
+        },
+        {
+          "month": "2021-05",
+          "series": "Broad market",
+          "growth": 4.7714277362
+        },
+        {
+          "month": "2021-06",
+          "series": "Equal industry, net",
+          "growth": 6.2169902215
+        },
+        {
+          "month": "2021-06",
+          "series": "Broad market",
+          "growth": 4.9016877134
+        },
+        {
+          "month": "2021-07",
+          "series": "Equal industry, net",
+          "growth": 6.2254458496
+        },
+        {
+          "month": "2021-07",
+          "series": "Broad market",
+          "growth": 4.9673703288
+        },
+        {
+          "month": "2021-08",
+          "series": "Equal industry, net",
+          "growth": 6.3378676428
+        },
+        {
+          "month": "2021-08",
+          "series": "Broad market",
+          "growth": 5.1139077535
+        },
+        {
+          "month": "2021-09",
+          "series": "Equal industry, net",
+          "growth": 6.1734445085
+        },
+        {
+          "month": "2021-09",
+          "series": "Broad market",
+          "growth": 4.8888958124
+        },
+        {
+          "month": "2021-10",
+          "series": "Equal industry, net",
+          "growth": 6.6228569861
+        },
+        {
+          "month": "2021-10",
+          "series": "Broad market",
+          "growth": 5.2130296047
+        },
+        {
+          "month": "2021-11",
+          "series": "Equal industry, net",
+          "growth": 6.4643074702
+        },
+        {
+          "month": "2021-11",
+          "series": "Broad market",
+          "growth": 5.130663737
+        },
+        {
+          "month": "2021-12",
+          "series": "Equal industry, net",
+          "growth": 6.7193867082
+        },
+        {
+          "month": "2021-12",
+          "series": "Broad market",
+          "growth": 5.2974103084
+        },
+        {
+          "month": "2022-01",
+          "series": "Equal industry, net",
+          "growth": 6.4994849849
+        },
+        {
+          "month": "2022-01",
+          "series": "Broad market",
+          "growth": 4.9716195744
+        },
+        {
+          "month": "2022-02",
+          "series": "Equal industry, net",
+          "growth": 6.433431587
+        },
+        {
+          "month": "2022-02",
+          "series": "Broad market",
+          "growth": 4.8582666481
+        },
+        {
+          "month": "2022-03",
+          "series": "Equal industry, net",
+          "growth": 6.7289610003
+        },
+        {
+          "month": "2022-03",
+          "series": "Broad market",
+          "growth": 5.0079012609
+        },
+        {
+          "month": "2022-04",
+          "series": "Equal industry, net",
+          "growth": 6.2313699764
+        },
+        {
+          "month": "2022-04",
+          "series": "Broad market",
+          "growth": 4.5366577523
+        },
+        {
+          "month": "2022-05",
+          "series": "Equal industry, net",
+          "growth": 6.3144453422
+        },
+        {
+          "month": "2022-05",
+          "series": "Broad market",
+          "growth": 4.523047779
+        },
+        {
+          "month": "2022-06",
+          "series": "Equal industry, net",
+          "growth": 5.7917021759
+        },
+        {
+          "month": "2022-06",
+          "series": "Broad market",
+          "growth": 4.1458255942
+        },
+        {
+          "month": "2022-07",
+          "series": "Equal industry, net",
+          "growth": 6.3407839138
+        },
+        {
+          "month": "2022-07",
+          "series": "Broad market",
+          "growth": 4.5458977641
+        },
+        {
+          "month": "2022-08",
+          "series": "Equal industry, net",
+          "growth": 6.1721998704
+        },
+        {
+          "month": "2022-08",
+          "series": "Broad market",
+          "growth": 4.3831546241
+        },
+        {
+          "month": "2022-09",
+          "series": "Equal industry, net",
+          "growth": 5.6146144674
+        },
+        {
+          "month": "2022-09",
+          "series": "Broad market",
+          "growth": 3.982095976
+        },
+        {
+          "month": "2022-10",
+          "series": "Equal industry, net",
+          "growth": 6.0789432521
+        },
+        {
+          "month": "2022-10",
+          "series": "Broad market",
+          "growth": 4.3042475405
+        },
+        {
+          "month": "2022-11",
+          "series": "Equal industry, net",
+          "growth": 6.3019101277
+        },
+        {
+          "month": "2022-11",
+          "series": "Broad market",
+          "growth": 4.518599068
+        },
+        {
+          "month": "2022-12",
+          "series": "Equal industry, net",
+          "growth": 5.87187696
+        },
+        {
+          "month": "2022-12",
+          "series": "Broad market",
+          "growth": 4.2452238244
+        },
+        {
+          "month": "2023-01",
+          "series": "Equal industry, net",
+          "growth": 6.3147677372
+        },
+        {
+          "month": "2023-01",
+          "series": "Broad market",
+          "growth": 4.5402668802
+        },
+        {
+          "month": "2023-02",
+          "series": "Equal industry, net",
+          "growth": 6.1668907648
+        },
+        {
+          "month": "2023-02",
+          "series": "Broad market",
+          "growth": 4.4390189287
+        },
+        {
+          "month": "2023-03",
+          "series": "Equal industry, net",
+          "growth": 6.2756527569
+        },
+        {
+          "month": "2023-03",
+          "series": "Broad market",
+          "growth": 4.5655309682
+        },
+        {
+          "month": "2023-04",
+          "series": "Equal industry, net",
+          "growth": 6.2818731162
+        },
+        {
+          "month": "2023-04",
+          "series": "Broad market",
+          "growth": 4.6102731717
+        },
+        {
+          "month": "2023-05",
+          "series": "Equal industry, net",
+          "growth": 6.1586136763
+        },
+        {
+          "month": "2023-05",
+          "series": "Broad market",
+          "growth": 4.6420840566
+        },
+        {
+          "month": "2023-06",
+          "series": "Equal industry, net",
+          "growth": 6.6366905408
+        },
+        {
+          "month": "2023-06",
+          "series": "Broad market",
+          "growth": 4.9605310229
+        },
+        {
+          "month": "2023-07",
+          "series": "Equal industry, net",
+          "growth": 6.8433040436
+        },
+        {
+          "month": "2023-07",
+          "series": "Broad market",
+          "growth": 5.1420864583
+        },
+        {
+          "month": "2023-08",
+          "series": "Equal industry, net",
+          "growth": 6.7106479553
+        },
+        {
+          "month": "2023-08",
+          "series": "Broad market",
+          "growth": 5.0438726069
+        },
+        {
+          "month": "2023-09",
+          "series": "Equal industry, net",
+          "growth": 6.4478004341
+        },
+        {
+          "month": "2023-09",
+          "series": "Broad market",
+          "growth": 4.8017667218
+        },
+        {
+          "month": "2023-10",
+          "series": "Equal industry, net",
+          "growth": 6.2016283151
+        },
+        {
+          "month": "2023-10",
+          "series": "Broad market",
+          "growth": 4.6730793737
+        },
+        {
+          "month": "2023-11",
+          "series": "Equal industry, net",
+          "growth": 6.6705435839
+        },
+        {
+          "month": "2023-11",
+          "series": "Broad market",
+          "growth": 5.1086103713
+        },
+        {
+          "month": "2023-12",
+          "series": "Equal industry, net",
+          "growth": 6.9683669602
+        },
+        {
+          "month": "2023-12",
+          "series": "Broad market",
+          "growth": 5.3783449989
+        },
+        {
+          "month": "2024-01",
+          "series": "Equal industry, net",
+          "growth": 6.8936017661
+        },
+        {
+          "month": "2024-01",
+          "series": "Broad market",
+          "growth": 5.4428851389
+        },
+        {
+          "month": "2024-02",
+          "series": "Equal industry, net",
+          "growth": 7.1826393479
+        },
+        {
+          "month": "2024-02",
+          "series": "Broad market",
+          "growth": 5.741699533
+        },
+        {
+          "month": "2024-03",
+          "series": "Equal industry, net",
+          "growth": 7.4265295532
+        },
+        {
+          "month": "2024-03",
+          "series": "Broad market",
+          "growth": 5.9294531077
+        },
+        {
+          "month": "2024-04",
+          "series": "Equal industry, net",
+          "growth": 7.1931597077
+        },
+        {
+          "month": "2024-04",
+          "series": "Broad market",
+          "growth": 5.6816019678
+        },
+        {
+          "month": "2024-05",
+          "series": "Equal industry, net",
+          "growth": 7.4206517505
+        },
+        {
+          "month": "2024-05",
+          "series": "Broad market",
+          "growth": 5.9520462215
+        },
+        {
+          "month": "2024-06",
+          "series": "Equal industry, net",
+          "growth": 7.4881755914
+        },
+        {
+          "month": "2024-06",
+          "series": "Broad market",
+          "growth": 6.1431069052
+        },
+        {
+          "month": "2024-07",
+          "series": "Equal industry, net",
+          "growth": 7.771198949
+        },
+        {
+          "month": "2024-07",
+          "series": "Broad market",
+          "growth": 6.2456967905
+        },
+        {
+          "month": "2024-08",
+          "series": "Equal industry, net",
+          "growth": 7.8927624383
+        },
+        {
+          "month": "2024-08",
+          "series": "Broad market",
+          "growth": 6.3762318535
+        },
+        {
+          "month": "2024-09",
+          "series": "Equal industry, net",
+          "growth": 8.1370100527
+        },
+        {
+          "month": "2024-09",
+          "series": "Broad market",
+          "growth": 6.5120455919
+        },
+        {
+          "month": "2024-10",
+          "series": "Equal industry, net",
+          "growth": 8.0501754877
+        },
+        {
+          "month": "2024-10",
+          "series": "Broad market",
+          "growth": 6.4723221138
+        },
+        {
+          "month": "2024-11",
+          "series": "Equal industry, net",
+          "growth": 8.7269609068
+        },
+        {
+          "month": "2024-11",
+          "series": "Broad market",
+          "growth": 6.9182651075
+        },
+        {
+          "month": "2024-12",
+          "series": "Equal industry, net",
+          "growth": 8.3822897375
+        },
+        {
+          "month": "2024-12",
+          "series": "Broad market",
+          "growth": 6.725245511
+        },
+        {
+          "month": "2025-01",
+          "series": "Equal industry, net",
+          "growth": 8.6357024135
+        },
+        {
+          "month": "2025-01",
+          "series": "Broad market",
+          "growth": 6.9384357937
+        },
+        {
+          "month": "2025-02",
+          "series": "Equal industry, net",
+          "growth": 8.5536518398
+        },
+        {
+          "month": "2025-02",
+          "series": "Broad market",
+          "growth": 6.792728642
+        },
+        {
+          "month": "2025-03",
+          "series": "Equal industry, net",
+          "growth": 8.2464425122
+        },
+        {
+          "month": "2025-03",
+          "series": "Broad market",
+          "growth": 6.3817685592
+        },
+        {
+          "month": "2025-04",
+          "series": "Equal industry, net",
+          "growth": 8.1038883732
+        },
+        {
+          "month": "2025-04",
+          "series": "Broad market",
+          "growth": 6.3504978932
+        },
+        {
+          "month": "2025-05",
+          "series": "Equal industry, net",
+          "growth": 8.5296333387
+        },
+        {
+          "month": "2025-05",
+          "series": "Broad market",
+          "growth": 6.7594699575
+        },
+        {
+          "month": "2025-06",
+          "series": "Equal industry, net",
+          "growth": 8.7386887565
+        },
+        {
+          "month": "2025-06",
+          "series": "Broad market",
+          "growth": 7.1109623953
+        },
+        {
+          "month": "2025-07",
+          "series": "Equal industry, net",
+          "growth": 8.8081052691
+        },
+        {
+          "month": "2025-07",
+          "series": "Broad market",
+          "growth": 7.2759367229
+        },
+        {
+          "month": "2025-08",
+          "series": "Equal industry, net",
+          "growth": 9.0702671865
+        },
+        {
+          "month": "2025-08",
+          "series": "Broad market",
+          "growth": 7.4374625182
+        },
+        {
+          "month": "2025-09",
+          "series": "Equal industry, net",
+          "growth": 9.3885350689
+        },
+        {
+          "month": "2025-09",
+          "series": "Broad market",
+          "growth": 7.7141361238
+        },
+        {
+          "month": "2025-10",
+          "series": "Equal industry, net",
+          "growth": 9.43106737
+        },
+        {
+          "month": "2025-10",
+          "series": "Broad market",
+          "growth": 7.8938754955
+        },
+        {
+          "month": "2025-11",
+          "series": "Equal industry, net",
+          "growth": 9.5764037327
+        },
+        {
+          "month": "2025-11",
+          "series": "Broad market",
+          "growth": 7.9072950839
+        },
+        {
+          "month": "2025-12",
+          "series": "Equal industry, net",
+          "growth": 9.5966059576
+        },
+        {
+          "month": "2025-12",
+          "series": "Broad market",
+          "growth": 7.9057136248
+        },
+        {
+          "month": "2026-01",
+          "series": "Equal industry, net",
+          "growth": 9.9719083205
+        },
+        {
+          "month": "2026-01",
+          "series": "Broad market",
+          "growth": 8.010859616
+        },
+        {
+          "month": "2026-02",
+          "series": "Equal industry, net",
+          "growth": 10.2650705755
+        },
+        {
+          "month": "2026-02",
+          "series": "Broad market",
+          "growth": 7.9387618795
+        },
+        {
+          "month": "2026-03",
+          "series": "Equal industry, net",
+          "growth": 9.8673525032
+        },
+        {
+          "month": "2026-03",
+          "series": "Broad market",
+          "growth": 7.5505564236
+        },
+        {
+          "month": "2026-04",
+          "series": "Equal industry, net",
+          "growth": 10.2989209224
+        },
+        {
+          "month": "2026-04",
+          "series": "Broad market",
+          "growth": 8.3237334014
+        },
+        {
+          "month": "2026-05",
+          "series": "Equal industry, net",
+          "growth": 10.4478237648
+        },
+        {
+          "month": "2026-05",
+          "series": "Broad market",
+          "growth": 8.7582322849
+        },
+        {
+          "month": "2026-06",
+          "series": "Equal industry, net",
+          "growth": 10.4636104427
+        },
+        {
+          "month": "2026-06",
+          "series": "Broad market",
+          "growth": 8.6899180731
+        },
+        {
+          "month": "2026-07",
+          "series": "Equal industry, net",
+          "growth": 10.4285178185
+        },
+        {
+          "month": "2026-07",
+          "series": "Broad market",
+          "growth": 8.6655863025
+        },
+        {
+          "month": "2026-08",
+          "series": "Equal industry, net",
+          "growth": 10.7543300824
+        },
+        {
+          "month": "2026-08",
+          "series": "Broad market",
+          "growth": 8.9125555121
+        }
+      ],
+      "drawdown": [
+        {
+          "month": "2000-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.02605492
+        },
+        {
+          "month": "2000-01",
+          "series": "Broad market",
+          "drawdown": -0.0433
+        },
+        {
+          "month": "2000-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.0562725632
+        },
+        {
+          "month": "2000-02",
+          "series": "Broad market",
+          "drawdown": -0.01574704
+        },
+        {
+          "month": "2000-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2000-03",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2000-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0078812514
+        },
+        {
+          "month": "2000-04",
+          "series": "Broad market",
+          "drawdown": -0.0589
+        },
+        {
+          "month": "2000-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.018012153
+        },
+        {
+          "month": "2000-05",
+          "series": "Broad market",
+          "drawdown": -0.09550879
+        },
+        {
+          "month": "2000-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.0137072777
+        },
+        {
+          "month": "2000-06",
+          "series": "Broad market",
+          "drawdown": -0.0495606365
+        },
+        {
+          "month": "2000-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0232498919
+        },
+        {
+          "month": "2000-07",
+          "series": "Broad market",
+          "drawdown": -0.0685694238
+        },
+        {
+          "month": "2000-08",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2000-08",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2000-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.005414509
+        },
+        {
+          "month": "2000-09",
+          "series": "Broad market",
+          "drawdown": -0.0493
+        },
+        {
+          "month": "2000-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0051400951
+        },
+        {
+          "month": "2000-10",
+          "series": "Broad market",
+          "drawdown": -0.07040554
+        },
+        {
+          "month": "2000-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0619555028
+        },
+        {
+          "month": "2000-11",
+          "series": "Broad market",
+          "drawdown": -0.1651312155
+        },
+        {
+          "month": "2000-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.0340433387
+        },
+        {
+          "month": "2000-12",
+          "series": "Broad market",
+          "drawdown": -0.1511054199
+        },
+        {
+          "month": "2001-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0085441296
+        },
+        {
+          "month": "2001-01",
+          "series": "Broad market",
+          "drawdown": -0.1189323153
+        },
+        {
+          "month": "2001-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.053472411
+        },
+        {
+          "month": "2001-02",
+          "series": "Broad market",
+          "drawdown": -0.2039553469
+        },
+        {
+          "month": "2001-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0999620893
+        },
+        {
+          "month": "2001-03",
+          "series": "Broad market",
+          "drawdown": -0.2583251967
+        },
+        {
+          "month": "2001-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0364946216
+        },
+        {
+          "month": "2001-04",
+          "series": "Broad market",
+          "drawdown": -0.1965436856
+        },
+        {
+          "month": "2001-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0290565872
+        },
+        {
+          "month": "2001-05",
+          "series": "Broad market",
+          "drawdown": -0.1885091224
+        },
+        {
+          "month": "2001-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.0513191546
+        },
+        {
+          "month": "2001-06",
+          "series": "Broad market",
+          "drawdown": -0.201979871
+        },
+        {
+          "month": "2001-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0576904301
+        },
+        {
+          "month": "2001-07",
+          "series": "Broad market",
+          "drawdown": -0.2165836394
+        },
+        {
+          "month": "2001-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.1045474212
+        },
+        {
+          "month": "2001-08",
+          "series": "Broad market",
+          "drawdown": -0.2642936957
+        },
+        {
+          "month": "2001-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.1812570597
+        },
+        {
+          "month": "2001-09",
+          "series": "Broad market",
+          "drawdown": -0.3302129806
+        },
+        {
+          "month": "2001-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.1639685786
+        },
+        {
+          "month": "2001-10",
+          "series": "Broad market",
+          "drawdown": -0.3121287311
+        },
+        {
+          "month": "2001-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.1103441942
+        },
+        {
+          "month": "2001-11",
+          "series": "Broad market",
+          "drawdown": -0.2591626434
+        },
+        {
+          "month": "2001-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.091818521
+        },
+        {
+          "month": "2001-12",
+          "series": "Broad market",
+          "drawdown": -0.2461239059
+        },
+        {
+          "month": "2002-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.101782022
+        },
+        {
+          "month": "2002-01",
+          "series": "Broad market",
+          "drawdown": -0.2559242951
+        },
+        {
+          "month": "2002-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.1015179304
+        },
+        {
+          "month": "2002-02",
+          "series": "Broad market",
+          "drawdown": -0.2719219228
+        },
+        {
+          "month": "2002-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0581268752
+        },
+        {
+          "month": "2002-03",
+          "series": "Broad market",
+          "drawdown": -0.2401049108
+        },
+        {
+          "month": "2002-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0948910034
+        },
+        {
+          "month": "2002-04",
+          "series": "Broad market",
+          "drawdown": -0.2785556023
+        },
+        {
+          "month": "2002-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.1057192792
+        },
+        {
+          "month": "2002-05",
+          "series": "Broad market",
+          "drawdown": -0.2873572239
+        },
+        {
+          "month": "2002-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.1676909885
+        },
+        {
+          "month": "2002-06",
+          "series": "Broad market",
+          "drawdown": -0.337954861
+        },
+        {
+          "month": "2002-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.2451391838
+        },
+        {
+          "month": "2002-07",
+          "series": "Broad market",
+          "drawdown": -0.3911832902
+        },
+        {
+          "month": "2002-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.2387672143
+        },
+        {
+          "month": "2002-08",
+          "series": "Broad market",
+          "drawdown": -0.3872868633
+        },
+        {
+          "month": "2002-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.3134360499
+        },
+        {
+          "month": "2002-09",
+          "series": "Broad market",
+          "drawdown": -0.4497836032
+        },
+        {
+          "month": "2002-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.2669372569
+        },
+        {
+          "month": "2002-10",
+          "series": "Broad market",
+          "drawdown": -0.4058763348
+        },
+        {
+          "month": "2002-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.2232064737
+        },
+        {
+          "month": "2002-11",
+          "series": "Broad market",
+          "drawdown": -0.3697536159
+        },
+        {
+          "month": "2002-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.2575488831
+        },
+        {
+          "month": "2002-12",
+          "series": "Broad market",
+          "drawdown": -0.4053625366
+        },
+        {
+          "month": "2003-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.2801994214
+        },
+        {
+          "month": "2003-01",
+          "series": "Broad market",
+          "drawdown": -0.420050082
+        },
+        {
+          "month": "2003-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.2968559485
+        },
+        {
+          "month": "2003-02",
+          "series": "Broad market",
+          "drawdown": -0.4304311855
+        },
+        {
+          "month": "2003-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.2898449668
+        },
+        {
+          "month": "2003-03",
+          "series": "Broad market",
+          "drawdown": -0.4236533166
+        },
+        {
+          "month": "2003-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.2346038487
+        },
+        {
+          "month": "2003-04",
+          "series": "Broad market",
+          "drawdown": -0.3759318112
+        },
+        {
+          "month": "2003-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.1851469881
+        },
+        {
+          "month": "2003-05",
+          "series": "Broad market",
+          "drawdown": -0.3376140244
+        },
+        {
+          "month": "2003-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.1723973645
+        },
+        {
+          "month": "2003-06",
+          "series": "Broad market",
+          "drawdown": -0.3275457576
+        },
+        {
+          "month": "2003-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.1615076373
+        },
+        {
+          "month": "2003-07",
+          "series": "Broad market",
+          "drawdown": -0.3114068558
+        },
+        {
+          "month": "2003-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.1343956369
+        },
+        {
+          "month": "2003-08",
+          "series": "Broad market",
+          "drawdown": -0.2948806203
+        },
+        {
+          "month": "2003-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.1479063745
+        },
+        {
+          "month": "2003-09",
+          "series": "Broad market",
+          "drawdown": -0.3030600051
+        },
+        {
+          "month": "2003-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0996664738
+        },
+        {
+          "month": "2003-10",
+          "series": "Broad market",
+          "drawdown": -0.2601981954
+        },
+        {
+          "month": "2003-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0860938602
+        },
+        {
+          "month": "2003-11",
+          "series": "Broad market",
+          "drawdown": -0.2496930098
+        },
+        {
+          "month": "2003-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.0321461285
+        },
+        {
+          "month": "2003-12",
+          "series": "Broad market",
+          "drawdown": -0.2169045943
+        },
+        {
+          "month": "2004-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0192649335
+        },
+        {
+          "month": "2004-01",
+          "series": "Broad market",
+          "drawdown": -0.1995198763
+        },
+        {
+          "month": "2004-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.0009691813
+        },
+        {
+          "month": "2004-02",
+          "series": "Broad market",
+          "drawdown": -0.1878328665
+        },
+        {
+          "month": "2004-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0103793223
+        },
+        {
+          "month": "2004-03",
+          "series": "Broad market",
+          "drawdown": -0.1978225223
+        },
+        {
+          "month": "2004-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.015774881
+        },
+        {
+          "month": "2004-04",
+          "series": "Broad market",
+          "drawdown": -0.2117804104
+        },
+        {
+          "month": "2004-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0124537451
+        },
+        {
+          "month": "2004-05",
+          "series": "Broad market",
+          "drawdown": -0.2020064875
+        },
+        {
+          "month": "2004-06",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2004-06",
+          "series": "Broad market",
+          "drawdown": -0.1865254133
+        },
+        {
+          "month": "2004-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0321172502
+        },
+        {
+          "month": "2004-07",
+          "series": "Broad market",
+          "drawdown": -0.218576312
+        },
+        {
+          "month": "2004-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.0310126194
+        },
+        {
+          "month": "2004-08",
+          "series": "Broad market",
+          "drawdown": -0.217091607
+        },
+        {
+          "month": "2004-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.012126992
+        },
+        {
+          "month": "2004-09",
+          "series": "Broad market",
+          "drawdown": -0.2037038735
+        },
+        {
+          "month": "2004-10",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2004-10",
+          "series": "Broad market",
+          "drawdown": -0.1915205428
+        },
+        {
+          "month": "2004-11",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2004-11",
+          "series": "Broad market",
+          "drawdown": -0.1536837042
+        },
+        {
+          "month": "2004-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2004-12",
+          "series": "Broad market",
+          "drawdown": -0.1234702124
+        },
+        {
+          "month": "2005-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0216141895
+        },
+        {
+          "month": "2005-01",
+          "series": "Broad market",
+          "drawdown": -0.1461723339
+        },
+        {
+          "month": "2005-02",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2005-02",
+          "series": "Broad market",
+          "drawdown": -0.1287542495
+        },
+        {
+          "month": "2005-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0183037415
+        },
+        {
+          "month": "2005-03",
+          "series": "Broad market",
+          "drawdown": -0.1437396764
+        },
+        {
+          "month": "2005-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0473794795
+        },
+        {
+          "month": "2005-04",
+          "series": "Broad market",
+          "drawdown": -0.1642042982
+        },
+        {
+          "month": "2005-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0105749454
+        },
+        {
+          "month": "2005-05",
+          "series": "Broad market",
+          "drawdown": -0.1316918454
+        },
+        {
+          "month": "2005-06",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2005-06",
+          "series": "Broad market",
+          "drawdown": -0.1246585493
+        },
+        {
+          "month": "2005-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2005-07",
+          "series": "Broad market",
+          "drawdown": -0.088244345
+        },
+        {
+          "month": "2005-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.0062634683
+        },
+        {
+          "month": "2005-08",
+          "series": "Broad market",
+          "drawdown": -0.0964501459
+        },
+        {
+          "month": "2005-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.0011152876
+        },
+        {
+          "month": "2005-09",
+          "series": "Broad market",
+          "drawdown": -0.089492812
+        },
+        {
+          "month": "2005-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0325029252
+        },
+        {
+          "month": "2005-10",
+          "series": "Broad market",
+          "drawdown": -0.1056087892
+        },
+        {
+          "month": "2005-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0046365392
+        },
+        {
+          "month": "2005-11",
+          "series": "Broad market",
+          "drawdown": -0.0705486537
+        },
+        {
+          "month": "2005-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.0038976418
+        },
+        {
+          "month": "2005-12",
+          "series": "Broad market",
+          "drawdown": -0.0698050927
+        },
+        {
+          "month": "2006-01",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-01",
+          "series": "Broad market",
+          "drawdown": -0.0383645048
+        },
+        {
+          "month": "2006-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.0003919618
+        },
+        {
+          "month": "2006-02",
+          "series": "Broad market",
+          "drawdown": -0.0379798506
+        },
+        {
+          "month": "2006-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-03",
+          "series": "Broad market",
+          "drawdown": -0.0202786799
+        },
+        {
+          "month": "2006-04",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-04",
+          "series": "Broad market",
+          "drawdown": -0.0095997175
+        },
+        {
+          "month": "2006-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0176868032
+        },
+        {
+          "month": "2006-05",
+          "series": "Broad market",
+          "drawdown": -0.0405992463
+        },
+        {
+          "month": "2006-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.0096820078
+        },
+        {
+          "month": "2006-06",
+          "series": "Broad market",
+          "drawdown": -0.0400236059
+        },
+        {
+          "month": "2006-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0053675423
+        },
+        {
+          "month": "2006-07",
+          "series": "Broad market",
+          "drawdown": -0.0435755185
+        },
+        {
+          "month": "2006-08",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-08",
+          "series": "Broad market",
+          "drawdown": -0.0201431187
+        },
+        {
+          "month": "2006-09",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-09",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-10",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-10",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-11",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-11",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2006-12",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2007-01",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2007-01",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2007-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.0101019059
+        },
+        {
+          "month": "2007-02",
+          "series": "Broad market",
+          "drawdown": -0.0158
+        },
+        {
+          "month": "2007-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2007-03",
+          "series": "Broad market",
+          "drawdown": -0.00458012
+        },
+        {
+          "month": "2007-04",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2007-04",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2007-05",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2007-05",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2007-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.013215845
+        },
+        {
+          "month": "2007-06",
+          "series": "Broad market",
+          "drawdown": -0.0156
+        },
+        {
+          "month": "2007-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0463973737
+        },
+        {
+          "month": "2007-07",
+          "series": "Broad market",
+          "drawdown": -0.04828208
+        },
+        {
+          "month": "2007-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.0370301744
+        },
+        {
+          "month": "2007-08",
+          "series": "Broad market",
+          "drawdown": -0.0353387163
+        },
+        {
+          "month": "2007-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.0040981721
+        },
+        {
+          "month": "2007-09",
+          "series": "Broad market",
+          "drawdown": -0.0011897068
+        },
+        {
+          "month": "2007-10",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2007-10",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2007-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0392987612
+        },
+        {
+          "month": "2007-11",
+          "series": "Broad market",
+          "drawdown": -0.0446
+        },
+        {
+          "month": "2007-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.0417080333
+        },
+        {
+          "month": "2007-12",
+          "series": "Broad market",
+          "drawdown": -0.0503324
+        },
+        {
+          "month": "2008-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.1002909964
+        },
+        {
+          "month": "2008-01",
+          "series": "Broad market",
+          "drawdown": -0.1083570904
+        },
+        {
+          "month": "2008-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.1204599224
+        },
+        {
+          "month": "2008-02",
+          "series": "Broad market",
+          "drawdown": -0.1347497205
+        },
+        {
+          "month": "2008-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.1261432119
+        },
+        {
+          "month": "2008-03",
+          "series": "Broad market",
+          "drawdown": -0.1414121476
+        },
+        {
+          "month": "2008-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0846762799
+        },
+        {
+          "month": "2008-04",
+          "series": "Broad market",
+          "drawdown": -0.1002857895
+        },
+        {
+          "month": "2008-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0602213712
+        },
+        {
+          "month": "2008-05",
+          "series": "Broad market",
+          "drawdown": -0.0818416482
+        },
+        {
+          "month": "2008-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.1346857134
+        },
+        {
+          "month": "2008-06",
+          "series": "Broad market",
+          "drawdown": -0.1576815281
+        },
+        {
+          "month": "2008-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.1457884945
+        },
+        {
+          "month": "2008-07",
+          "series": "Broad market",
+          "drawdown": -0.1627354389
+        },
+        {
+          "month": "2008-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.1299987608
+        },
+        {
+          "month": "2008-08",
+          "series": "Broad market",
+          "drawdown": -0.1488368472
+        },
+        {
+          "month": "2008-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.2105009353
+        },
+        {
+          "month": "2008-09",
+          "series": "Broad market",
+          "drawdown": -0.2271438572
+        },
+        {
+          "month": "2008-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.3488919181
+        },
+        {
+          "month": "2008-10",
+          "series": "Broad market",
+          "drawdown": -0.3594568289
+        },
+        {
+          "month": "2008-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.3887596274
+        },
+        {
+          "month": "2008-11",
+          "series": "Broad market",
+          "drawdown": -0.4088427074
+        },
+        {
+          "month": "2008-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.3789816893
+        },
+        {
+          "month": "2008-12",
+          "series": "Broad market",
+          "drawdown": -0.3983792233
+        },
+        {
+          "month": "2009-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.4239060422
+        },
+        {
+          "month": "2009-01",
+          "series": "Broad market",
+          "drawdown": -0.4470503441
+        },
+        {
+          "month": "2009-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.4808768145
+        },
+        {
+          "month": "2009-02",
+          "series": "Broad market",
+          "drawdown": -0.5030641443
+        },
+        {
+          "month": "2009-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.4378520808
+        },
+        {
+          "month": "2009-03",
+          "series": "Broad market",
+          "drawdown": -0.4581908365
+        },
+        {
+          "month": "2009-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.370556255
+        },
+        {
+          "month": "2009-04",
+          "series": "Broad market",
+          "drawdown": -0.4030346636
+        },
+        {
+          "month": "2009-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.3447289761
+        },
+        {
+          "month": "2009-05",
+          "series": "Broad market",
+          "drawdown": -0.3719924662
+        },
+        {
+          "month": "2009-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.3377516786
+        },
+        {
+          "month": "2009-06",
+          "series": "Broad market",
+          "drawdown": -0.3692920338
+        },
+        {
+          "month": "2009-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.2826187893
+        },
+        {
+          "month": "2009-07",
+          "series": "Broad market",
+          "drawdown": -0.3204121664
+        },
+        {
+          "month": "2009-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.2655084416
+        },
+        {
+          "month": "2009-08",
+          "series": "Broad market",
+          "drawdown": -0.2977139327
+        },
+        {
+          "month": "2009-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.2364115162
+        },
+        {
+          "month": "2009-09",
+          "series": "Broad market",
+          "drawdown": -0.2689904326
+        },
+        {
+          "month": "2009-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.2506941927
+        },
+        {
+          "month": "2009-10",
+          "series": "Broad market",
+          "drawdown": -0.2876311766
+        },
+        {
+          "month": "2009-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.2054958726
+        },
+        {
+          "month": "2009-11",
+          "series": "Broad market",
+          "drawdown": -0.2478809962
+        },
+        {
+          "month": "2009-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.1783294538
+        },
+        {
+          "month": "2009-12",
+          "series": "Broad market",
+          "drawdown": -0.2271977236
+        },
+        {
+          "month": "2010-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.2049344511
+        },
+        {
+          "month": "2010-01",
+          "series": "Broad market",
+          "drawdown": -0.2530865999
+        },
+        {
+          "month": "2010-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.1785092656
+        },
+        {
+          "month": "2010-02",
+          "series": "Broad market",
+          "drawdown": -0.2277662356
+        },
+        {
+          "month": "2010-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.1289961896
+        },
+        {
+          "month": "2010-03",
+          "series": "Broad market",
+          "drawdown": -0.1790382851
+        },
+        {
+          "month": "2010-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.1079406849
+        },
+        {
+          "month": "2010-04",
+          "series": "Broad market",
+          "drawdown": -0.1625369546
+        },
+        {
+          "month": "2010-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.1754034536
+        },
+        {
+          "month": "2010-05",
+          "series": "Broad market",
+          "drawdown": -0.2286127889
+        },
+        {
+          "month": "2010-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.2188054776
+        },
+        {
+          "month": "2010-06",
+          "series": "Broad market",
+          "drawdown": -0.2715019178
+        },
+        {
+          "month": "2010-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.158340557
+        },
+        {
+          "month": "2010-07",
+          "series": "Broad market",
+          "drawdown": -0.2210170007
+        },
+        {
+          "month": "2010-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.1926049921
+        },
+        {
+          "month": "2010-08",
+          "series": "Broad market",
+          "drawdown": -0.2580965915
+        },
+        {
+          "month": "2010-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.1180812021
+        },
+        {
+          "month": "2010-09",
+          "series": "Broad market",
+          "drawdown": -0.1871706256
+        },
+        {
+          "month": "2010-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0811473244
+        },
+        {
+          "month": "2010-10",
+          "series": "Broad market",
+          "drawdown": -0.1556328459
+        },
+        {
+          "month": "2010-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0705130237
+        },
+        {
+          "month": "2010-11",
+          "series": "Broad market",
+          "drawdown": -0.150566643
+        },
+        {
+          "month": "2010-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.0116663903
+        },
+        {
+          "month": "2010-12",
+          "series": "Broad market",
+          "drawdown": -0.0925503447
+        },
+        {
+          "month": "2011-01",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2011-01",
+          "series": "Broad market",
+          "drawdown": -0.0744920965
+        },
+        {
+          "month": "2011-02",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2011-02",
+          "series": "Broad market",
+          "drawdown": -0.0421918707
+        },
+        {
+          "month": "2011-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2011-03",
+          "series": "Broad market",
+          "drawdown": -0.0376901725
+        },
+        {
+          "month": "2011-04",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2011-04",
+          "series": "Broad market",
+          "drawdown": -0.0097831875
+        },
+        {
+          "month": "2011-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0076710128
+        },
+        {
+          "month": "2011-05",
+          "series": "Broad market",
+          "drawdown": -0.022358941
+        },
+        {
+          "month": "2011-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.0216941289
+        },
+        {
+          "month": "2011-06",
+          "series": "Broad market",
+          "drawdown": -0.0393698955
+        },
+        {
+          "month": "2011-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0486622331
+        },
+        {
+          "month": "2011-07",
+          "series": "Broad market",
+          "drawdown": -0.0619447029
+        },
+        {
+          "month": "2011-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.1007613037
+        },
+        {
+          "month": "2011-08",
+          "series": "Broad market",
+          "drawdown": -0.1177589931
+        },
+        {
+          "month": "2011-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.1664606776
+        },
+        {
+          "month": "2011-09",
+          "series": "Broad market",
+          "drawdown": -0.1845446373
+        },
+        {
+          "month": "2011-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0708500872
+        },
+        {
+          "month": "2011-10",
+          "series": "Broad market",
+          "drawdown": -0.0920719992
+        },
+        {
+          "month": "2011-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0746488316
+        },
+        {
+          "month": "2011-11",
+          "series": "Broad market",
+          "drawdown": -0.0945234048
+        },
+        {
+          "month": "2011-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.0652688223
+        },
+        {
+          "month": "2011-12",
+          "series": "Broad market",
+          "drawdown": -0.0877323303
+        },
+        {
+          "month": "2012-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0235107276
+        },
+        {
+          "month": "2012-01",
+          "series": "Broad market",
+          "drawdown": -0.041662813
+        },
+        {
+          "month": "2012-02",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2012-02",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2012-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2012-03",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2012-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0076688559
+        },
+        {
+          "month": "2012-04",
+          "series": "Broad market",
+          "drawdown": -0.0084
+        },
+        {
+          "month": "2012-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0595958744
+        },
+        {
+          "month": "2012-05",
+          "series": "Broad market",
+          "drawdown": -0.06948256
+        },
+        {
+          "month": "2012-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.0292903245
+        },
+        {
+          "month": "2012-06",
+          "series": "Broad market",
+          "drawdown": -0.0331923798
+        },
+        {
+          "month": "2012-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0157524975
+        },
+        {
+          "month": "2012-07",
+          "series": "Broad market",
+          "drawdown": -0.0255545996
+        },
+        {
+          "month": "2012-08",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2012-08",
+          "series": "Broad market",
+          "drawdown": -0.0007062419
+        },
+        {
+          "month": "2012-09",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2012-09",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2012-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0075422556
+        },
+        {
+          "month": "2012-10",
+          "series": "Broad market",
+          "drawdown": -0.0175
+        },
+        {
+          "month": "2012-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0002494841
+        },
+        {
+          "month": "2012-11",
+          "series": "Broad market",
+          "drawdown": -0.00973825
+        },
+        {
+          "month": "2012-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2012-12",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-01",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-01",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-02",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-02",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-03",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-04",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-04",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-05",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-05",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.0075239889
+        },
+        {
+          "month": "2013-06",
+          "series": "Broad market",
+          "drawdown": -0.012
+        },
+        {
+          "month": "2013-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-07",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.0282021037
+        },
+        {
+          "month": "2013-08",
+          "series": "Broad market",
+          "drawdown": -0.0271
+        },
+        {
+          "month": "2013-09",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-09",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-10",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-10",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-11",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-11",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2013-12",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0322605173
+        },
+        {
+          "month": "2014-01",
+          "series": "Broad market",
+          "drawdown": -0.033
+        },
+        {
+          "month": "2014-02",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-02",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-03",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-04",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-04",
+          "series": "Broad market",
+          "drawdown": -0.0019
+        },
+        {
+          "month": "2014-05",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-05",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-06",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-06",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0268312511
+        },
+        {
+          "month": "2014-07",
+          "series": "Broad market",
+          "drawdown": -0.0203
+        },
+        {
+          "month": "2014-08",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-08",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.0286810634
+        },
+        {
+          "month": "2014-09",
+          "series": "Broad market",
+          "drawdown": -0.0196
+        },
+        {
+          "month": "2014-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0034222334
+        },
+        {
+          "month": "2014-10",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-11",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-11",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2014-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.0011266032
+        },
+        {
+          "month": "2014-12",
+          "series": "Broad market",
+          "drawdown": -0.0005
+        },
+        {
+          "month": "2015-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0259205687
+        },
+        {
+          "month": "2015-01",
+          "series": "Broad market",
+          "drawdown": -0.03138455
+        },
+        {
+          "month": "2015-02",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2015-02",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2015-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0115925019
+        },
+        {
+          "month": "2015-03",
+          "series": "Broad market",
+          "drawdown": -0.0109
+        },
+        {
+          "month": "2015-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0033806578
+        },
+        {
+          "month": "2015-04",
+          "series": "Broad market",
+          "drawdown": -0.0049654
+        },
+        {
+          "month": "2015-05",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2015-05",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2015-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.0187547422
+        },
+        {
+          "month": "2015-06",
+          "series": "Broad market",
+          "drawdown": -0.0154
+        },
+        {
+          "month": "2015-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0103990491
+        },
+        {
+          "month": "2015-07",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2015-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.0673105901
+        },
+        {
+          "month": "2015-08",
+          "series": "Broad market",
+          "drawdown": -0.0602
+        },
+        {
+          "month": "2015-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.0956385549
+        },
+        {
+          "month": "2015-09",
+          "series": "Broad market",
+          "drawdown": -0.08895788
+        },
+        {
+          "month": "2015-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0273577098
+        },
+        {
+          "month": "2015-10",
+          "series": "Broad market",
+          "drawdown": -0.0183521157
+        },
+        {
+          "month": "2015-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0260345933
+        },
+        {
+          "month": "2015-11",
+          "series": "Broad market",
+          "drawdown": -0.0127567228
+        },
+        {
+          "month": "2015-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.0510002369
+        },
+        {
+          "month": "2015-12",
+          "series": "Broad market",
+          "drawdown": -0.0338837289
+        },
+        {
+          "month": "2016-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0951645367
+        },
+        {
+          "month": "2016-01",
+          "series": "Broad market",
+          "drawdown": -0.0892421912
+        },
+        {
+          "month": "2016-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.0902253272
+        },
+        {
+          "month": "2016-02",
+          "series": "Broad market",
+          "drawdown": -0.0896975701
+        },
+        {
+          "month": "2016-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0242273324
+        },
+        {
+          "month": "2016-03",
+          "series": "Broad market",
+          "drawdown": -0.0262494908
+        },
+        {
+          "month": "2016-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0088459892
+        },
+        {
+          "month": "2016-04",
+          "series": "Broad market",
+          "drawdown": -0.0172909861
+        },
+        {
+          "month": "2016-05",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2016-05",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2016-06",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2016-06",
+          "series": "Broad market",
+          "drawdown": -0.0001
+        },
+        {
+          "month": "2016-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2016-07",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2016-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.0037570864
+        },
+        {
+          "month": "2016-08",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2016-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.0015359952
+        },
+        {
+          "month": "2016-09",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2016-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0266805515
+        },
+        {
+          "month": "2016-10",
+          "series": "Broad market",
+          "drawdown": -0.0199
+        },
+        {
+          "month": "2016-11",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2016-11",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2016-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2016-12",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-01",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-01",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-02",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-02",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-03",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-04",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-04",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-05",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-05",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-06",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-06",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-07",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.0034145854
+        },
+        {
+          "month": "2017-08",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-09",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-09",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-10",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-10",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-11",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-11",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2017-12",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2018-01",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2018-01",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2018-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.0499835389
+        },
+        {
+          "month": "2018-02",
+          "series": "Broad market",
+          "drawdown": -0.0353
+        },
+        {
+          "month": "2018-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0651371906
+        },
+        {
+          "month": "2018-03",
+          "series": "Broad market",
+          "drawdown": -0.05681281
+        },
+        {
+          "month": "2018-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.058715
+        },
+        {
+          "month": "2018-04",
+          "series": "Broad market",
+          "drawdown": -0.0527571051
+        },
+        {
+          "month": "2018-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.04098984
+        },
+        {
+          "month": "2018-05",
+          "series": "Broad market",
+          "drawdown": -0.0265184769
+        },
+        {
+          "month": "2018-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.0250966067
+        },
+        {
+          "month": "2018-06",
+          "series": "Broad market",
+          "drawdown": -0.0203855433
+        },
+        {
+          "month": "2018-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2018-07",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2018-08",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2018-08",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2018-09",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2018-09",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2018-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0583838552
+        },
+        {
+          "month": "2018-10",
+          "series": "Broad market",
+          "drawdown": -0.0745
+        },
+        {
+          "month": "2018-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0355428741
+        },
+        {
+          "month": "2018-11",
+          "series": "Broad market",
+          "drawdown": -0.05700805
+        },
+        {
+          "month": "2018-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.1266153141
+        },
+        {
+          "month": "2018-12",
+          "series": "Broad market",
+          "drawdown": -0.1452720965
+        },
+        {
+          "month": "2019-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0551737719
+        },
+        {
+          "month": "2019-01",
+          "series": "Broad market",
+          "drawdown": -0.0720219152
+        },
+        {
+          "month": "2019-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.0247860277
+        },
+        {
+          "month": "2019-02",
+          "series": "Broad market",
+          "drawdown": -0.0386147041
+        },
+        {
+          "month": "2019-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0150051094
+        },
+        {
+          "month": "2019-03",
+          "series": "Broad market",
+          "drawdown": -0.0262128338
+        },
+        {
+          "month": "2019-04",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-04",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0675907829
+        },
+        {
+          "month": "2019-05",
+          "series": "Broad market",
+          "drawdown": -0.0671
+        },
+        {
+          "month": "2019-06",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-06",
+          "series": "Broad market",
+          "drawdown": -0.00021107
+        },
+        {
+          "month": "2019-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-07",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.0203048621
+        },
+        {
+          "month": "2019-08",
+          "series": "Broad market",
+          "drawdown": -0.0239
+        },
+        {
+          "month": "2019-09",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-09",
+          "series": "Broad market",
+          "drawdown": -0.0082824
+        },
+        {
+          "month": "2019-10",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-10",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-11",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-11",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2019-12",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2020-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0051834067
+        },
+        {
+          "month": "2020-01",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2020-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.089884222
+        },
+        {
+          "month": "2020-02",
+          "series": "Broad market",
+          "drawdown": -0.0803
+        },
+        {
+          "month": "2020-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.2293126133
+        },
+        {
+          "month": "2020-03",
+          "series": "Broad market",
+          "drawdown": -0.20197631
+        },
+        {
+          "month": "2020-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.1146550014
+        },
+        {
+          "month": "2020-04",
+          "series": "Broad market",
+          "drawdown": -0.0936046929
+        },
+        {
+          "month": "2020-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0731653061
+        },
+        {
+          "month": "2020-05",
+          "series": "Broad market",
+          "drawdown": -0.0428465557
+        },
+        {
+          "month": "2020-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.0567073868
+        },
+        {
+          "month": "2020-06",
+          "series": "Broad market",
+          "drawdown": -0.0193962963
+        },
+        {
+          "month": "2020-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2020-07",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2020-08",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2020-08",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2020-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.0420824926
+        },
+        {
+          "month": "2020-09",
+          "series": "Broad market",
+          "drawdown": -0.0363
+        },
+        {
+          "month": "2020-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0623559111
+        },
+        {
+          "month": "2020-10",
+          "series": "Broad market",
+          "drawdown": -0.05624859
+        },
+        {
+          "month": "2020-11",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2020-11",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2020-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2020-12",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-01",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-01",
+          "series": "Broad market",
+          "drawdown": -0.0007
+        },
+        {
+          "month": "2021-02",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-02",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-03",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-04",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-04",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-05",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-05",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-06",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-06",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-07",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-08",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-08",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.0259429738
+        },
+        {
+          "month": "2021-09",
+          "series": "Broad market",
+          "drawdown": -0.044
+        },
+        {
+          "month": "2021-10",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-10",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0239397463
+        },
+        {
+          "month": "2021-11",
+          "series": "Broad market",
+          "drawdown": -0.0158
+        },
+        {
+          "month": "2021-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2021-12",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2022-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0327264575
+        },
+        {
+          "month": "2022-01",
+          "series": "Broad market",
+          "drawdown": -0.0615
+        },
+        {
+          "month": "2022-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.0425567293
+        },
+        {
+          "month": "2022-02",
+          "series": "Broad market",
+          "drawdown": -0.0828978
+        },
+        {
+          "month": "2022-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2022-03",
+          "series": "Broad market",
+          "drawdown": -0.0546510522
+        },
+        {
+          "month": "2022-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0739476754
+        },
+        {
+          "month": "2022-04",
+          "series": "Broad market",
+          "drawdown": -0.1436083882
+        },
+        {
+          "month": "2022-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0616017329
+        },
+        {
+          "month": "2022-05",
+          "series": "Broad market",
+          "drawdown": -0.1461775631
+        },
+        {
+          "month": "2022-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.1392873022
+        },
+        {
+          "month": "2022-06",
+          "series": "Broad market",
+          "drawdown": -0.2173863543
+        },
+        {
+          "month": "2022-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0576875221
+        },
+        {
+          "month": "2022-07",
+          "series": "Broad market",
+          "drawdown": -0.1418641375
+        },
+        {
+          "month": "2022-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.0827410249
+        },
+        {
+          "month": "2022-08",
+          "series": "Broad market",
+          "drawdown": -0.1725854014
+        },
+        {
+          "month": "2022-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.1656045462
+        },
+        {
+          "month": "2022-09",
+          "series": "Broad market",
+          "drawdown": -0.2482938371
+        },
+        {
+          "month": "2022-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0966000172
+        },
+        {
+          "month": "2022-10",
+          "series": "Broad market",
+          "drawdown": -0.1874808086
+        },
+        {
+          "month": "2022-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0634646081
+        },
+        {
+          "month": "2022-11",
+          "series": "Broad market",
+          "drawdown": -0.1470173528
+        },
+        {
+          "month": "2022-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.1273724191
+        },
+        {
+          "month": "2022-12",
+          "series": "Broad market",
+          "drawdown": -0.198622803
+        },
+        {
+          "month": "2023-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0615538213
+        },
+        {
+          "month": "2023-01",
+          "series": "Broad market",
+          "drawdown": -0.1429270878
+        },
+        {
+          "month": "2023-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.0835300183
+        },
+        {
+          "month": "2023-02",
+          "series": "Broad market",
+          "drawdown": -0.1620398137
+        },
+        {
+          "month": "2023-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0673667515
+        },
+        {
+          "month": "2023-03",
+          "series": "Broad market",
+          "drawdown": -0.1381579484
+        },
+        {
+          "month": "2023-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0664423355
+        },
+        {
+          "month": "2023-04",
+          "series": "Broad market",
+          "drawdown": -0.1297118963
+        },
+        {
+          "month": "2023-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0847600876
+        },
+        {
+          "month": "2023-05",
+          "series": "Broad market",
+          "drawdown": -0.1237069084
+        },
+        {
+          "month": "2023-06",
+          "series": "Equal industry, net",
+          "drawdown": -0.0137124379
+        },
+        {
+          "month": "2023-06",
+          "series": "Broad market",
+          "drawdown": -0.0635932023
+        },
+        {
+          "month": "2023-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2023-07",
+          "series": "Broad market",
+          "drawdown": -0.0293207135
+        },
+        {
+          "month": "2023-08",
+          "series": "Equal industry, net",
+          "drawdown": -0.0193848012
+        },
+        {
+          "month": "2023-08",
+          "series": "Broad market",
+          "drawdown": -0.0478606879
+        },
+        {
+          "month": "2023-09",
+          "series": "Equal industry, net",
+          "drawdown": -0.0577942478
+        },
+        {
+          "month": "2023-09",
+          "series": "Broad market",
+          "drawdown": -0.0935633749
+        },
+        {
+          "month": "2023-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0937669471
+        },
+        {
+          "month": "2023-10",
+          "series": "Broad market",
+          "drawdown": -0.1178558764
+        },
+        {
+          "month": "2023-11",
+          "series": "Equal industry, net",
+          "drawdown": -0.0252451825
+        },
+        {
+          "month": "2023-11",
+          "series": "Broad market",
+          "drawdown": -0.0356400441
+        },
+        {
+          "month": "2023-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2023-12",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.0107292275
+        },
+        {
+          "month": "2024-01",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-02",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-02",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-03",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-03",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0314238089
+        },
+        {
+          "month": "2024-04",
+          "series": "Broad market",
+          "drawdown": -0.0418
+        },
+        {
+          "month": "2024-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0007914602
+        },
+        {
+          "month": "2024-05",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-06",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-06",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-07",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-08",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-08",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-09",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-09",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-10",
+          "series": "Equal industry, net",
+          "drawdown": -0.0106715568
+        },
+        {
+          "month": "2024-10",
+          "series": "Broad market",
+          "drawdown": -0.0061
+        },
+        {
+          "month": "2024-11",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-11",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2024-12",
+          "series": "Equal industry, net",
+          "drawdown": -0.0394949826
+        },
+        {
+          "month": "2024-12",
+          "series": "Broad market",
+          "drawdown": -0.0279
+        },
+        {
+          "month": "2025-01",
+          "series": "Equal industry, net",
+          "drawdown": -0.010457076
+        },
+        {
+          "month": "2025-01",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-02",
+          "series": "Equal industry, net",
+          "drawdown": -0.0198590401
+        },
+        {
+          "month": "2025-02",
+          "series": "Broad market",
+          "drawdown": -0.021
+        },
+        {
+          "month": "2025-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0550613667
+        },
+        {
+          "month": "2025-03",
+          "series": "Broad market",
+          "drawdown": -0.0802295
+        },
+        {
+          "month": "2025-04",
+          "series": "Equal industry, net",
+          "drawdown": -0.0713962788
+        },
+        {
+          "month": "2025-04",
+          "series": "Broad market",
+          "drawdown": -0.0847363754
+        },
+        {
+          "month": "2025-05",
+          "series": "Equal industry, net",
+          "drawdown": -0.0226112584
+        },
+        {
+          "month": "2025-05",
+          "series": "Broad market",
+          "drawdown": -0.025793398
+        },
+        {
+          "month": "2025-06",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-06",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-07",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-07",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-08",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-08",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-09",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-09",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-10",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-10",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-11",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-11",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-12",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2025-12",
+          "series": "Broad market",
+          "drawdown": -0.0002
+        },
+        {
+          "month": "2026-01",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2026-01",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2026-02",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2026-02",
+          "series": "Broad market",
+          "drawdown": -0.009
+        },
+        {
+          "month": "2026-03",
+          "series": "Equal industry, net",
+          "drawdown": -0.0387447967
+        },
+        {
+          "month": "2026-03",
+          "series": "Broad market",
+          "drawdown": -0.0574599
+        },
+        {
+          "month": "2026-04",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2026-04",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2026-05",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2026-05",
+          "series": "Broad market",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2026-06",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2026-06",
+          "series": "Broad market",
+          "drawdown": -0.0078
+        },
+        {
+          "month": "2026-07",
+          "series": "Equal industry, net",
+          "drawdown": -0.0033537778
+        },
+        {
+          "month": "2026-07",
+          "series": "Broad market",
+          "drawdown": -0.01057816
+        },
+        {
+          "month": "2026-08",
+          "series": "Equal industry, net",
+          "drawdown": 0.0
+        },
+        {
+          "month": "2026-08",
+          "series": "Broad market",
+          "drawdown": 0.0
+        }
+      ],
+      "annual_active": [
+        {
+          "year": "2000",
+          "active_gap": 0.1313694205
+        },
+        {
+          "year": "2001",
+          "active_gap": 0.0521206603
+        },
+        {
+          "year": "2002",
+          "active_gap": 0.0287405767
+        },
+        {
+          "year": "2003",
+          "active_gap": -0.0133364232
+        },
+        {
+          "year": "2004",
+          "active_gap": 0.0143935865
+        },
+        {
+          "year": "2005",
+          "active_gap": -0.012321893
+        },
+        {
+          "year": "2006",
+          "active_gap": 0.0305575043
+        },
+        {
+          "year": "2007",
+          "active_gap": 0.0233471152
+        },
+        {
+          "year": "2008",
+          "active_gap": 0.0145403911
+        },
+        {
+          "year": "2009",
+          "active_gap": 0.0385680738
+        },
+        {
+          "year": "2010",
+          "active_gap": 0.0286017761
+        },
+        {
+          "year": "2011",
+          "active_gap": 0.0209051248
+        },
+        {
+          "year": "2012",
+          "active_gap": 0.0018334318
+        },
+        {
+          "year": "2013",
+          "active_gap": -0.0138861279
+        },
+        {
+          "year": "2014",
+          "active_gap": -0.0065505774
+        },
+        {
+          "year": "2015",
+          "active_gap": -0.0230599114
+        },
+        {
+          "year": "2016",
+          "active_gap": 0.0064956433
+        },
+        {
+          "year": "2017",
+          "active_gap": -0.0480882691
+        },
+        {
+          "year": "2018",
+          "active_gap": -0.0158861342
+        },
+        {
+          "year": "2019",
+          "active_gap": -0.0393143795
+        },
+        {
+          "year": "2020",
+          "active_gap": -0.016965884
+        },
+        {
+          "year": "2021",
+          "active_gap": 0.0051800888
+        },
+        {
+          "year": "2022",
+          "active_gap": 0.0724937699
+        },
+        {
+          "year": "2023",
+          "active_gap": -0.0801808485
+        },
+        {
+          "year": "2024",
+          "active_gap": -0.0475243916
+        },
+        {
+          "year": "2025",
+          "active_gap": -0.030660997
+        },
+        {
+          "year": "2026 YTD",
+          "active_gap": -0.0067173162
+        }
+      ],
+      "periods": [
+        {
+          "period": "2000–2026",
+          "portfolio_return": 0.0931616213,
+          "market_return": 0.0854881439,
+          "return_gap": 0.0076734774
+        },
+        {
+          "period": "2015–2026",
+          "portfolio_return": 0.1208884998,
+          "market_return": 0.1368199398,
+          "return_gap": -0.01593144
+        },
+        {
+          "period": "2020–2026",
+          "portfolio_return": 0.1429442123,
+          "market_return": 0.1531947964,
+          "return_gap": -0.0102505841
+        }
+      ],
+      "factor_models": [
+        {
+          "model": "Market only",
+          "alpha": 0.0121398533,
+          "ci_range": "-0.5% to 2.9%",
+          "r2": 0.929215094
+        },
+        {
+          "model": "Five factors",
+          "alpha": -0.004301763,
+          "ci_range": "-1.5% to 0.6%",
+          "r2": 0.9585390877
+        }
+      ],
+      "costs": [
+        {
+          "trading_cost_bps": 0,
+          "annualized_return": 0.0935505764
+        },
+        {
+          "trading_cost_bps": 10,
+          "annualized_return": 0.0931616213
+        },
+        {
+          "trading_cost_bps": 50,
+          "annualized_return": 0.0916066556
+        },
+        {
+          "trading_cost_bps": 100,
+          "annualized_return": 0.089664866
+        }
+      ],
+      "sector_contribution": [
+        {
+          "industry": "Durbl",
+          "mean_monthly_contribution": 0.001129375,
+          "annualized_volatility": 0.3298502383
+        },
+        {
+          "industry": "Enrgy",
+          "mean_monthly_contribution": 0.0009977812,
+          "annualized_volatility": 0.2469686345
+        },
+        {
+          "industry": "HiTec",
+          "mean_monthly_contribution": 0.000944125,
+          "annualized_volatility": 0.2341811963
+        },
+        {
+          "industry": "Manuf",
+          "mean_monthly_contribution": 0.000900875,
+          "annualized_volatility": 0.1792942943
+        },
+        {
+          "industry": "Shops",
+          "mean_monthly_contribution": 0.0008994062,
+          "annualized_volatility": 0.16101709
+        },
+        {
+          "industry": "Utils",
+          "mean_monthly_contribution": 0.0008570625,
+          "annualized_volatility": 0.1468351957
+        },
+        {
+          "industry": "Hlth",
+          "mean_monthly_contribution": 0.0008066562,
+          "annualized_volatility": 0.1428859771
+        },
+        {
+          "industry": "NoDur",
+          "mean_monthly_contribution": 0.0007785625,
+          "annualized_volatility": 0.1263261273
+        },
+        {
+          "industry": "Other",
+          "mean_monthly_contribution": 0.0007601875,
+          "annualized_volatility": 0.1820453881
+        },
+        {
+          "industry": "Telcm",
+          "mean_monthly_contribution": 0.000335125,
+          "annualized_volatility": 0.1834108641
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "analysis_code",
+      "label": "Portfolio analysis calculations",
+      "path": "analyze.py",
+      "query": {
+        "engine": "python",
+        "language": "python",
+        "description": "Reproducible monthly portfolio, benchmark, risk, factor, and sensitivity calculations from local source files.",
+        "tables_used": [
+          "data/processed/industry_monthly_returns.csv",
+          "data/processed/market_factors_monthly.csv",
+          "data/raw/fred_usrec.csv",
+          "data/raw/fred_cpiaucsl.csv"
+        ],
+        "filters": [
+          "January 2000 through August 2026",
+          "Ten value-weighted U.S. industry return series",
+          "Monthly rebalance to 10% per industry"
+        ]
+      }
+    },
+    {
+      "id": "french_industry",
+      "label": "Kenneth French 10 Industry Portfolios",
+      "path": "data/raw/industries.zip",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"
+    },
+    {
+      "id": "french_factors",
+      "label": "Kenneth French 5 Factors",
+      "path": "data/raw/factors.zip",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"
+    },
+    {
+      "id": "fred_recession",
+      "label": "FRED USREC recession indicator",
+      "path": "data/raw/fred_usrec.csv",
+      "url": "https://fred.stlouisfed.org/series/USREC"
+    },
+    {
+      "id": "fred_cpi",
+      "label": "FRED CPIAUCSL consumer price index",
+      "path": "data/raw/fred_cpiaucsl.csv",
+      "url": "https://fred.stlouisfed.org/series/CPIAUCSL"
+    },
+    {
+      "id": "dataset_headline",
+      "label": "Reviewed report dataset: headline",
+      "path": "analysis/report_snapshot/headline.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/headline.csv')",
+        "description": "Reads the headline report snapshot generated from analyze.py results.",
+        "tables_used": [
+          "analysis/report_snapshot/headline.csv"
+        ]
+      }
+    },
+    {
+      "id": "dataset_wealth",
+      "label": "Reviewed report dataset: wealth",
+      "path": "analysis/report_snapshot/wealth.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/wealth.csv')",
+        "description": "Reads the wealth report snapshot generated from analyze.py results.",
+        "tables_used": [
+          "analysis/report_snapshot/wealth.csv"
+        ]
+      }
+    },
+    {
+      "id": "dataset_drawdown",
+      "label": "Reviewed report dataset: drawdown",
+      "path": "analysis/report_snapshot/drawdown.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/drawdown.csv')",
+        "description": "Reads the drawdown report snapshot generated from analyze.py results.",
+        "tables_used": [
+          "analysis/report_snapshot/drawdown.csv"
+        ]
+      }
+    },
+    {
+      "id": "dataset_annual_active",
+      "label": "Reviewed report dataset: annual_active",
+      "path": "analysis/report_snapshot/annual_active.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/annual_active.csv')",
+        "description": "Reads the annual_active report snapshot generated from analyze.py results.",
+        "tables_used": [
+          "analysis/report_snapshot/annual_active.csv"
+        ]
+      }
+    },
+    {
+      "id": "dataset_periods",
+      "label": "Reviewed report dataset: periods",
+      "path": "analysis/report_snapshot/periods.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/periods.csv')",
+        "description": "Reads the periods report snapshot generated from analyze.py results.",
+        "tables_used": [
+          "analysis/report_snapshot/periods.csv"
+        ]
+      }
+    },
+    {
+      "id": "dataset_factor_models",
+      "label": "Reviewed report dataset: factor_models",
+      "path": "analysis/report_snapshot/factor_models.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/factor_models.csv')",
+        "description": "Reads the factor_models report snapshot generated from analyze.py results.",
+        "tables_used": [
+          "analysis/report_snapshot/factor_models.csv"
+        ]
+      }
+    },
+    {
+      "id": "dataset_costs",
+      "label": "Reviewed report dataset: costs",
+      "path": "analysis/report_snapshot/costs.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/costs.csv')",
+        "description": "Reads the costs report snapshot generated from analyze.py results.",
+        "tables_used": [
+          "analysis/report_snapshot/costs.csv"
+        ]
+      }
+    },
+    {
+      "id": "dataset_sector_contribution",
+      "label": "Reviewed report dataset: sector_contribution",
+      "path": "analysis/report_snapshot/sector_contribution.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('analysis/report_snapshot/sector_contribution.csv')",
+        "description": "Reads the sector_contribution report snapshot generated from analyze.py results.",
+        "tables_used": [
+          "analysis/report_snapshot/sector_contribution.csv"
+        ]
+      }
+    }
+  ]
+}

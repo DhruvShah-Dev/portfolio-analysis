@@ -1,0 +1,257 @@
+{
+  "main_2000_to_latest": {
+    "months": 320,
+    "start": "2000-01-01",
+    "end": "2026-08-01",
+    "portfolio_net": {
+      "annualized_return": 0.09316162128794914,
+      "annualized_volatility": 0.14899067149774325,
+      "sharpe": 0.5473055964730167,
+      "max_drawdown": -0.480876814455814,
+      "tracking_error": 0.04178576672545614,
+      "information_ratio": 0.14142802193426002,
+      "market_beta": 0.9176270514243077,
+      "positive_month_share": 0.65,
+      "positive_active_month_share": 0.5125,
+      "total_growth_of_one": 10.75433008236006
+    },
+    "portfolio_gross": {
+      "annualized_return": 0.09355057638818232,
+      "annualized_volatility": 0.14898843974495854,
+      "sharpe": 0.5497146298075207,
+      "max_drawdown": -0.480619636719509,
+      "tracking_error": 0.041802642640297025,
+      "information_ratio": 0.1499277223674457,
+      "market_beta": 0.9175786512495999,
+      "positive_month_share": 0.65,
+      "positive_active_month_share": 0.5125,
+      "total_growth_of_one": 10.856836613304878
+    },
+    "market": {
+      "annualized_return": 0.08548814390771997,
+      "annualized_volatility": 0.15652313597552048,
+      "sharpe": 0.4832113126830578,
+      "max_drawdown": -0.5030641442636923,
+      "tracking_error": 0.0,
+      "information_ratio": null,
+      "market_beta": 1.0,
+      "positive_month_share": 0.6375,
+      "positive_active_month_share": 0.0,
+      "total_growth_of_one": 8.912555512117784
+    },
+    "annualized_return_gap_pp": 0.7673477380229166
+  },
+  "recent_2015_to_latest": {
+    "months": 140,
+    "start": "2015-01-01",
+    "end": "2026-08-01",
+    "portfolio_net": {
+      "annualized_return": 0.12088849981030503,
+      "annualized_volatility": 0.1512272271134973,
+      "sharpe": 0.701243090226963,
+      "max_drawdown": -0.22931261327970187,
+      "tracking_error": 0.042866239585722915,
+      "information_ratio": -0.34649533236461805,
+      "market_beta": 0.9389923547159099,
+      "positive_month_share": 0.6857142857142857,
+      "positive_active_month_share": 0.44285714285714284,
+      "total_growth_of_one": 3.786414512703946
+    },
+    "portfolio_gross": {
+      "annualized_return": 0.12127503606088852,
+      "annualized_volatility": 0.151237659378631,
+      "sharpe": 0.7035039166264622,
+      "max_drawdown": -0.2292582929644661,
+      "tracking_error": 0.04286848079142587,
+      "information_ratio": -0.33833049405882326,
+      "market_beta": 0.9390521017641643,
+      "positive_month_share": 0.6857142857142857,
+      "positive_active_month_share": 0.44285714285714284,
+      "total_growth_of_one": 3.8016761688664853
+    },
+    "market": {
+      "annualized_return": 0.13681993979218943,
+      "annualized_volatility": 0.15504726549180117,
+      "sharpe": 0.7797622203559154,
+      "max_drawdown": -0.2482938371430179,
+      "tracking_error": 0.0,
+      "information_ratio": null,
+      "market_beta": 1.0000000000000004,
+      "positive_month_share": 0.6714285714285714,
+      "positive_active_month_share": 0.0,
+      "total_growth_of_one": 4.464124476303367
+    },
+    "annualized_return_gap_pp": -1.5931439981884399
+  },
+  "pre_2020": {
+    "months": 240,
+    "start": "2000-01-01",
+    "end": "2019-12-01",
+    "portfolio_net": {
+      "annualized_return": 0.07705403113984177,
+      "annualized_volatility": 0.14023996999105062,
+      "sharpe": 0.4864334125156679,
+      "max_drawdown": -0.480876814455814,
+      "tracking_error": 0.037201974075870364,
+      "information_ratio": 0.29655434820050036,
+      "market_beta": 0.9073273870104963,
+      "positive_month_share": 0.65,
+      "positive_active_month_share": 0.5208333333333334,
+      "total_growth_of_one": 4.4131613943723655
+    },
+    "portfolio_gross": {
+      "annualized_return": 0.07741332869702866,
+      "annualized_volatility": 0.14023119537498446,
+      "sharpe": 0.4888462928429742,
+      "max_drawdown": -0.480619636719509,
+      "tracking_error": 0.03722767874960349,
+      "information_ratio": 0.3053238982868646,
+      "market_beta": 0.9072220103816063,
+      "positive_month_share": 0.65,
+      "positive_active_month_share": 0.5208333333333334,
+      "total_growth_of_one": 4.442698877763737
+    },
+    "market": {
+      "annualized_return": 0.06381445632359495,
+      "annualized_volatility": 0.14967061659093706,
+      "sharpe": 0.38207232189262375,
+      "max_drawdown": -0.5030641442636923,
+      "tracking_error": 0.0,
+      "information_ratio": null,
+      "market_beta": 0.9999999999999999,
+      "positive_month_share": 0.6416666666666667,
+      "positive_active_month_share": 0.0,
+      "total_growth_of_one": 3.4460196872706144
+    },
+    "annualized_return_gap_pp": 1.3239574816246824
+  },
+  "since_2020": {
+    "months": 80,
+    "start": "2020-01-01",
+    "end": "2026-08-01",
+    "portfolio_net": {
+      "annualized_return": 0.1429442122705591,
+      "annualized_volatility": 0.17283305141145577,
+      "sharpe": 0.7031148892992992,
+      "max_drawdown": -0.22931261327970187,
+      "tracking_error": 0.053262877416615444,
+      "information_ratio": -0.17758162247959233,
+      "market_beta": 0.9427972037981126,
+      "positive_month_share": 0.65,
+      "positive_active_month_share": 0.4875,
+      "total_growth_of_one": 2.4368766789435616
+    },
+    "portfolio_gross": {
+      "annualized_return": 0.1434270539733431,
+      "annualized_volatility": 0.17284458315294823,
+      "sharpe": 0.705547132432191,
+      "max_drawdown": -0.22925829296446598,
+      "tracking_error": 0.053264308186460795,
+      "information_ratio": -0.16953191184590186,
+      "market_beta": 0.9428609714567736,
+      "positive_month_share": 0.65,
+      "positive_active_month_share": 0.4875,
+      "total_growth_of_one": 2.443748026147956
+    },
+    "market": {
+      "annualized_return": 0.15319479641129918,
+      "annualized_volatility": 0.17520845301049,
+      "sharpe": 0.7475666712961506,
+      "max_drawdown": -0.248293837143018,
+      "tracking_error": 0.0,
+      "information_ratio": null,
+      "market_beta": 0.9999999999999994,
+      "positive_month_share": 0.625,
+      "positive_active_month_share": 0.0,
+      "total_growth_of_one": 2.5863333123255834
+    },
+    "annualized_return_gap_pp": -1.0250584140740093
+  },
+  "rolling_60m": {
+    "windows": 261,
+    "portfolio_outperformance_share": 0.5862068965517241,
+    "worst_relative_gap_pp": -28.43386891096764
+  },
+  "recession": {
+    "recession_months": 28,
+    "expansion_months": 292,
+    "recession_mean_monthly_active": 0.0006283573171705299,
+    "expansion_mean_monthly_active": 0.00047944321004188387
+  },
+  "cost": {
+    "assumed_cost_per_traded_notional": 0.001,
+    "annualized_drag_pp": 0.038895510023317925,
+    "mean_annual_one_way_turnover": 0.15960881841914837,
+    "cost_sensitivity": {
+      "0": 0.09355057638818232,
+      "10": 0.09316162128794914,
+      "50": 0.09160665562142545,
+      "100": 0.08966486595321754
+    }
+  },
+  "inflation": {
+    "cpi_base_previous_month": 168.8,
+    "cpi_last": 334.131,
+    "missing_cpi_months": [
+      "2025-10-01"
+    ],
+    "portfolio_real_growth": 5.4329916047968565,
+    "market_real_growth": 4.502543524681883
+  },
+  "factor_models": {
+    "market_only": {
+      "monthly_alpha": 0.0010116544443603776,
+      "annualized_alpha_approx": 0.012139853332324532,
+      "annualized_alpha_95ci_approx": [
+        -0.004855807808695894,
+        0.029135514473344958
+      ],
+      "hac_lags": 6,
+      "betas": [
+        0.9176270514243069
+      ],
+      "r_squared": 0.9292150939955027
+    },
+    "five_factor": {
+      "monthly_alpha": -0.00035848024638188044,
+      "annualized_alpha_approx": -0.0043017629565825655,
+      "annualized_alpha_95ci_approx": [
+        -0.014715105307975977,
+        0.006111579394810847
+      ],
+      "hac_lags": 6,
+      "betas": [
+        0.9628250275852472,
+        0.043273444177933884,
+        0.07946306219469498,
+        0.1562014798970413,
+        0.1235340839667014
+      ],
+      "r_squared": 0.9585390877482767
+    }
+  },
+  "sector_mean_monthly_contribution": {
+    "Durbl": 0.0011293749999999995,
+    "Enrgy": 0.00099778125,
+    "HiTec": 0.0009441249999999999,
+    "Hlth": 0.0008066562499999995,
+    "Manuf": 0.0009008749999999995,
+    "NoDur": 0.0007785624999999995,
+    "Other": 0.0007601874999999999,
+    "Shops": 0.0008994062499999994,
+    "Telcm": 0.00033512499999999976,
+    "Utils": 0.0008570624999999996
+  },
+  "sector_annualized_volatility": {
+    "Durbl": 0.32985023831713134,
+    "Enrgy": 0.24696863449668402,
+    "HiTec": 0.23418119626346084,
+    "Hlth": 0.1428859771492958,
+    "Manuf": 0.17929429430032628,
+    "NoDur": 0.12632612725758544,
+    "Other": 0.18204538814059576,
+    "Shops": 0.16101709000813083,
+    "Telcm": 0.1834108640717913,
+    "Utils": 0.1468351956828558
+  }
+}
